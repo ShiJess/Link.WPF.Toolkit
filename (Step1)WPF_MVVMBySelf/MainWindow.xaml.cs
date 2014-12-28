@@ -16,12 +16,14 @@ namespace WPF_MVVM
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
+    /// 自己实现TestViewModel+TestCommand
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new TestViewModel();
         }
     }
 }
