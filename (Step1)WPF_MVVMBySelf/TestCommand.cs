@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace WPF_MVVM
+namespace WPF_MVVMBySelf
 {
     class TestCommand : ICommand
     {
-        //public Action<object> ExecuteCommand { get; set; }
-        //public Func<object, bool> CanExecuteCommand { get; set; }
+      
         public TestCommand(TestViewModel viemo)
         {
             viewmodel = viemo;

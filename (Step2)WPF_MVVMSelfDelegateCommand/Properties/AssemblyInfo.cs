@@ -7,11 +7,11 @@ using System.Windows;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("WPF_MVVMBySelf")]
+[assembly: AssemblyTitle("WPF_MVVMSelfDelegateCommand")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("QiPaShi")]
-[assembly: AssemblyProduct("WPF_MVVMBySelf")]
+[assembly: AssemblyProduct("WPF_MVVMSelfDelegateCommand")]
 [assembly: AssemblyCopyright("Copyright © QiPaShi 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

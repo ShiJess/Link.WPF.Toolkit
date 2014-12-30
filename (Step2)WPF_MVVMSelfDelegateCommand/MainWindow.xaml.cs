@@ -12,11 +12,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_MVVMBySelf
+namespace WPF_MVVMSelfDelegateCommand
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
-    /// 自己实现TestViewModel+TestCommand
     /// </summary>
     public partial class MainWindow : Window
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace WPF_MVVM
+namespace WPF_MVVMBySelf
 {
     class TestViewModel : INotifyPropertyChanged
     {
