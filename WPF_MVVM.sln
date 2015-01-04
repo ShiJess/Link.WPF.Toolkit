@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "(Step1)WPF_MVVMBySelf", "(S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "(Step2)WPF_MVVMSelfDelegateCommand", "(Step2)WPF_MVVMSelfDelegateCommand\(Step2)WPF_MVVMSelfDelegateCommand.csproj", "{7D6BD012-DB49-4465-B2A3-C2863007F64A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "(Step3)WPF_MVVM_PrismBasic", "(Step3)WPF_MVVM_PrismBasic\(Step3)WPF_MVVM_PrismBasic.csproj", "{77CAA25A-41B0-4952-B6BD-30F503855904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D6BD012-DB49-4465-B2A3-C2863007F64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D6BD012-DB49-4465-B2A3-C2863007F64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D6BD012-DB49-4465-B2A3-C2863007F64A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CAA25A-41B0-4952-B6BD-30F503855904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CAA25A-41B0-4952-B6BD-30F503855904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CAA25A-41B0-4952-B6BD-30F503855904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CAA25A-41B0-4952-B6BD-30F503855904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
