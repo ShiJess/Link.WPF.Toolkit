@@ -29,10 +29,17 @@ namespace WPF_MVVM_PrismBasic
         /// </summary>
         public ICommand TestCommand { get; set; }
 
+        /// <summary>
+        /// 测试带参数的命令
+        /// </summary>
+        public ICommand TestParameterCommand { get; set; }
+
 
         public TestViewModel()
         {
             TestCommand = new DelegateCommand(Test,CanTest);
+
+            TestParameterCommand = new DelegateCommand<string>(TestParameter);
         }
 
         int i = 0;
@@ -51,6 +58,11 @@ namespace WPF_MVVM_PrismBasic
         private bool CanTest()
         {
             return true;
+        }
+
+        private void TestParameter(string para)
+        {
+            TestStr = para + "para";
         }
     }
 }

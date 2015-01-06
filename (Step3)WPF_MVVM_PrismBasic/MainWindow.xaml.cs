@@ -24,5 +24,10 @@ namespace WPF_MVVM_PrismBasic
             InitializeComponent();
             this.DataContext = new TestViewModel();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as TestViewModel).TestParameterCommand.Execute("testpara");
+        }
     }
 }
