@@ -4,12 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples"
-        xmlns:Toolkit="clr-namespace:Link.WPF.Toolkit;assembly=Link.WPF.Toolkit" x:Class="Link.WPF.Toolkit.Samples.MainWindow"
+    xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
+    x:Class="Link.WPF.Toolkit.Samples.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+    </Window.Resources>
     <Grid>
 
-        <Toolkit:UserControl1 HorizontalAlignment="Left" Height="100" Margin="188,148,0,0" VerticalAlignment="Top" Width="100"/>
+
+
+        <cstk:UserControl1 HorizontalAlignment="Left" Height="100" Margin="333,107,0,0" VerticalAlignment="Top" Width="100"/>
+        <cstk:IPBox HorizontalAlignment="Left" Height="100" Margin="61,265,0,0" VerticalAlignment="Top" Width="251"/>
+
+
 
     </Grid>
 </Window>
