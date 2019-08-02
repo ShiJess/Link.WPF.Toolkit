@@ -12,16 +12,24 @@
     <OutputType>Library</OutputType>
     <StartupObject />
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Description>WPF Controls:
+IPAddrBox</Description>
+    <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit</PackageTags>
+    <PackageReleaseNotes>add ipaddrbox;</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WaitingMask.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System.Xaml" />
-    <!--<Reference Include="System.Xaml">
+    <!--<Reference Include="System.Xaml" />-->
+    <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>-->
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -35,25 +43,18 @@
     <!--<Compile Update="IPBox\IPBox.cs">     
       <SubType>Code</SubType>
     </Compile>-->
-    <Page Include="IPBox\Themes\Generic.xaml">
+    <Page Include="IPAddrBox\Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
+    <Page Include="LinkMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <!--<Compile Update="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>-->
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Include="UserControl1.xaml">
+    <Page Include="WaitingMask\WaitingMask.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -62,6 +63,12 @@
     <None Include="..\..\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="WaitingMask\WaitingMask.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>
 

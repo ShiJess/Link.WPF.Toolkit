@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Link.WPF.Toolkit
 {
     /// <summary>
-    /// Window1.xaml 的交互逻辑
+    /// TODO LinkMessageBox.xaml 的交互逻辑
     /// </summary>
-    public partial class Window1 : Window
+    public partial class LinkMessageBox : Window
     {
-        public Window1()
+        public LinkMessageBox()
         {
             InitializeComponent();
         }

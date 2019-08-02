@@ -4,7 +4,7 @@
     xmlns:local="clr-namespace:Link.WPF.Toolkit">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Link.WPF.Toolkit;component/IPBox/Themes/Generic.xaml" />             
+        <ResourceDictionary Source="/Link.WPF.Toolkit;component/IPAddrBox/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
-       
+
 </ResourceDictionary>

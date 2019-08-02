@@ -4,20 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples"
-    xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
-    x:Class="Link.WPF.Toolkit.Samples.MainWindow"
-        mc:Ignorable="d"
+        xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
+        x:Class="Link.WPF.Toolkit.Samples.MainWindow"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        
+
     </Window.Resources>
     <Grid>
-
-
-
-        <cstk:UserControl1 HorizontalAlignment="Left" Height="100" Margin="333,107,0,0" VerticalAlignment="Top" Width="100"/>
-        <cstk:IPBox HorizontalAlignment="Left" Height="100" Margin="61,265,0,0" VerticalAlignment="Top" Width="251"/>
-
+        <UniformGrid >
+            <cstk:IPAddrBox Text="192.168.1.1" />
+            <cstk:WaitingMask Visibility="Visible" />
+            <Button x:Name="button" Content="Button" Click="Button_Click"/>
+            <TextBox x:Name="textBox" Background="Red" Text="TextBox"/>
+        </UniformGrid>
 
 
     </Grid>

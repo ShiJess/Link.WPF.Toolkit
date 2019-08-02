@@ -24,5 +24,11 @@ namespace Link.WPF.Toolkit.Samples
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LinkMessageBox messageBox = new LinkMessageBox();
+            messageBox.ShowDialog();
+        }
     }
 }

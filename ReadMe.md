@@ -22,3 +22,7 @@ Need change to:
     <Generator>MSBuild:Compile</Generator>
 </Page>
 ```
+
+## Other WPF Control Lib
+
+[Extended WPF Toolkit](https://github.com/xceedsoftware/wpftoolkit)
