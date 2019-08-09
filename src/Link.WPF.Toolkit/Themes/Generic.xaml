@@ -5,6 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/IPAddrBox/Themes/Generic.xaml" />
+        <ResourceDictionary Source="/Link.WPF.Toolkit;component/ImageViewer/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

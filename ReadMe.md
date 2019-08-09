@@ -2,7 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/Link.WPF.Toolkit/)
 
-WPF Controls - [Use Guide](docs/ReadMe.md)
+WPF Controls - [User Guide](docs/ReadMe.md)
 
 |   |
 |:---:|

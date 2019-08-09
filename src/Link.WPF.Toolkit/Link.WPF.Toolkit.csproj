@@ -2,10 +2,10 @@
   <!--Sdk="Microsoft.NET.Sdk.WindowsDesktop"-->
   <PropertyGroup>
     <TargetFrameworks>net45;net40</TargetFrameworks>
-    <Version>0.0.1-beta</Version>
+    <Version>0.0.2-beta</Version>
     <UseWPF>true</UseWPF>
-    <AssemblyVersion>0.0.0.1</AssemblyVersion>
-    <FileVersion>0.0.0.1</FileVersion>
+    <AssemblyVersion>0.0.0.2</AssemblyVersion>
+    <FileVersion>0.0.0.2</FileVersion>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <ApplicationIcon />
@@ -13,12 +13,14 @@
     <StartupObject />
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Description>WPF Controls:
-IPAddrBox</Description>
+IPAddrBox
+ImageViewer</Description>
     <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit</PackageTags>
     <PackageReleaseNotes>add ipaddrbox;</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ImageViewer\Themes\Generic.xaml" />
     <None Remove="WaitingMask.xaml" />
   </ItemGroup>
 
@@ -43,6 +45,9 @@ IPAddrBox</Description>
     <!--<Compile Update="IPBox\IPBox.cs">     
       <SubType>Code</SubType>
     </Compile>-->
+    <Page Include="ImageViewer\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IPAddrBox\Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
