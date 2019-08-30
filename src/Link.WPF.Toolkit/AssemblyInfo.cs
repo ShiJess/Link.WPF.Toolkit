@@ -9,5 +9,5 @@ using System.Windows.Markup;
 [assembly: XmlnsPrefix("http://schemas.canself.com/wpf/xaml/toolkit", "cstk")]
 //uri style xmlns namespace
 [assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit")]
-//[assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit.IPBox")]
+[assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit.Behaviors")]
 

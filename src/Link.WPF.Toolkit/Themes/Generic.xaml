@@ -1,11 +1,18 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Link.WPF.Toolkit">
+    xmlns:local="clr-namespace:Link.WPF.Toolkit"
+    xmlns:converter="clr-namespace:Link.WPF.Toolkit.Converter">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/IPAddrBox/Themes/Generic.xaml" />
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/ImageViewer/Themes/Generic.xaml" />
+        <ResourceDictionary Source="/Link.WPF.Toolkit;component/PasswordBox/Themes/Generic.xaml" />
+        <ResourceDictionary Source="/Link.WPF.Toolkit;component/DateTimePicker/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <converter:EnumToDisplayNameConverter x:Key="EnumToNameConverter"/>
+    <converter:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
+    <converter:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    
 </ResourceDictionary>

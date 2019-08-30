@@ -83,7 +83,7 @@ namespace Link.WPF.Toolkit
 
         private TextBox ipTextA;
 
-        public TextBox IPTextA
+        private TextBox IPTextA
         {
             get { return ipTextA; }
             set
@@ -106,7 +106,7 @@ namespace Link.WPF.Toolkit
 
         private TextBox ipTextB;
 
-        public TextBox IPTextB
+        private TextBox IPTextB
         {
             get { return ipTextB; }
             set
@@ -129,7 +129,7 @@ namespace Link.WPF.Toolkit
 
         private TextBox ipTextC;
 
-        public TextBox IPTextC
+        private TextBox IPTextC
         {
             get { return ipTextC; }
             set
@@ -152,7 +152,7 @@ namespace Link.WPF.Toolkit
 
         private TextBox ipTextD;
 
-        public TextBox IPTextD
+        private TextBox IPTextD
         {
             get { return ipTextD; }
             set
@@ -383,8 +383,7 @@ namespace Link.WPF.Toolkit
                     break;
             }
         }
-
-
+        
         private void Value_PreviewKeyUp(object sender, KeyEventArgs e)
         {
             //throw new NotImplementedException();

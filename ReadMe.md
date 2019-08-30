@@ -4,10 +4,11 @@
 
 WPF Controls - [User Guide](docs/ReadMe.md)
 
+<!--
 |   |
 |:---:|
 |[`IPAddrBox` Control](docs/IPAddrBox.md)| 
-
+-->
 
 ## For User - How to Use
 
@@ -45,3 +46,18 @@ Need change to:
 ## Other WPF Control Lib
 
 [Extended WPF Toolkit](https://github.com/xceedsoftware/wpftoolkit)
+
+
+## RoadMap
+
+* About `ScrollViewer`:
+    * Nesting ScrollViewer -- Scroll Parent when internal scrollviewer scroll to end;
+    * Scroll Vertical After Horizontal & Scroll Horizontal After Vertical
+    * Auto Scroll[When content change] - always scroll to end & When mouse is pressed, mouse wheel scroll disable
+* About `PasswordTextBox` - passwordbox/passwordtextbox
+    * Password Binding Support
+    * Show Password Support
+* About `DateTimePicker`
+    * `Hour.Minute.Second` Support
+* Custom Window - `WindowChrome`
+    * Custom Min&Max&Close button
