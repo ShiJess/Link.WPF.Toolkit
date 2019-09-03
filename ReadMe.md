@@ -61,3 +61,14 @@ Need change to:
     * `Hour.Minute.Second` Support
 * Custom Window - `WindowChrome`
     * Custom Min&Max&Close button
+* MessageBox support customization
+* Watermark Input TextBox
+* MultiCheck ComboBox
+* TextBox with line number
+* ListBox With Grid Panel - use some attach helper?
+* Number TextBox With UpDown Button
+    * Double Number TextBox - Support dot input when use `UpdateSourceTrigger=PropertyChanged` - official TextBox not support
+
+* Add Style Lib - provide some common style
+    * common control style, e.g:TextBox,Button,ComboBox,etc.
+    * some company classical style imitation, e.g:google style,ms style,ali style,netease style,etc.
