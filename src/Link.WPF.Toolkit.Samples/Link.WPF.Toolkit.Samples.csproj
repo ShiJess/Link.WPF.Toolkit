@@ -108,6 +108,10 @@
     <None Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Link.WPF.Toolkit.Markdig\Link.WPF.Toolkit.Markdig.csproj">
+      <Project>{b12e9e71-1a00-483c-84cb-bc39f678fe08}</Project>
+      <Name>Link.WPF.Toolkit.Markdig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj">
       <Project>{d5c27eae-7dc9-4fe0-a2d5-d836fbcb754f}</Project>
       <Name>Link.WPF.Toolkit</Name>

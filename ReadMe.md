@@ -1,6 +1,6 @@
 ## Link.WPF.Toolkit
 
-[![NuGet](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/Link.WPF.Toolkit/)
+[![NuGet](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg)](https://www.nuget.org/packages/Link.WPF.Toolkit/)
 
 WPF Controls - [User Guide](docs/ReadMe.md)
 
@@ -72,3 +72,7 @@ Need change to:
 * Add Style Lib - provide some common style
     * common control style, e.g:TextBox,Button,ComboBox,etc.
     * some company classical style imitation, e.g:google style,ms style,ali style,netease style,etc.
+
+
+* Markdown support —— https://github.com/Kryptos-FR/markdig.wpf
+    * https://github.com/neolithos/NeoMarkdigXaml
