@@ -61,7 +61,9 @@ Need change to:
     * `Hour.Minute.Second` Support
 * Custom Window - `WindowChrome`
     * Custom Min&Max&Close button
+    * F11 max process，need hide close button
 * MessageBox support customization
+* custom FileDialog,FolderBrowserDialog
 * Watermark Input TextBox
 * MultiCheck ComboBox
 * TextBox with line number
