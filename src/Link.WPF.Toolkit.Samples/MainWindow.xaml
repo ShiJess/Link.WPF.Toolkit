@@ -13,17 +13,21 @@
     <Window.Resources>
 
         <SampleDataSource:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+        
         <DataTemplate x:Key="DataTemplate1">
             <Grid>
                 <Image Source="{Binding Image}" Width="50" Height="50" />
             </Grid>
         </DataTemplate>
+        
         <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
             <VirtualizingStackPanel Orientation="Horizontal" IsItemsHost="True"/>
         </ItemsPanelTemplate>
+        
         <ItemsPanelTemplate x:Key="ItemsPanelTemplate2">
             <VirtualizingStackPanel Orientation="Vertical" IsItemsHost="True"/>
         </ItemsPanelTemplate>
+        
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
@@ -123,18 +127,44 @@
             <TextBox x:Name="textBox" Background="Red" Text="TextBox"/>
             <PasswordBox cstk:PasswordHelper.Attach="True" cstk:PasswordHelper.Password="{Binding Password}" Style="{DynamicResource PasswordBoxStyle1}" />
             <cstk:PasswordTextBox Password="123" />
-            <ListBox ItemsSource="{Binding Collection}" cstk:ScrollViewerHelper.ScrollHorizontal="True" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}" Style="{DynamicResource ListBoxStyle1}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-            </ListBox>
             <ListBox ItemsSource="{Binding Collection}" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate2}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+            <ListBox ItemsSource="{Binding Collection}" cstk:ScrollViewerHelper.ScrollMode="HorizontalOnly" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}" Style="{DynamicResource ListBoxStyle1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}"/>
+            <ScrollViewer cstk:ScrollViewerHelper.ScrollMode="VerticalFirst" CanContentScroll="True" HorizontalScrollBarVisibility="Visible" >
+                <StackPanel Orientation="Vertical">
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" cstk:ScrollViewerHelper.ScrollMode="VerticalOnly" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollMode="VerticalFirst" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer cstk:ScrollViewerHelper.ScrollMode="VerticalFirst" CanContentScroll="True" HorizontalScrollBarVisibility="Visible">
+                <StackPanel Orientation="Vertical">
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" cstk:ScrollViewerHelper.ScrollMode="HorizontalOnly" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollMode="HorizontalFirst" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer cstk:ScrollViewerHelper.ScrollMode="HorizontalFirst" CanContentScroll="True" HorizontalScrollBarVisibility="Visible" >
+                <StackPanel Orientation="Horizontal">
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" cstk:ScrollViewerHelper.ScrollMode="VerticalOnly" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollMode="VerticalFirst" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer cstk:ScrollViewerHelper.ScrollMode="HorizontalFirst" CanContentScroll="True" HorizontalScrollBarVisibility="Visible">
+                <StackPanel Orientation="Horizontal">
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollParent="True" cstk:ScrollViewerHelper.ScrollMode="HorizontalOnly" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                    <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollMode="HorizontalFirst" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
+                </StackPanel>
+            </ScrollViewer>
             <ScrollViewer >
                 <StackPanel>
-                    <ListBox ItemsSource="{Binding Collection}" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
-                    <ListBox ItemsSource="{Binding Collection}"  Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
+                    <ListBox ItemsSource="{Binding Collection}"  Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate2}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
+                        <i:Interaction.Behaviors>
+                            <cstk:IgnoreMouseWheelBehavior />
+                        </i:Interaction.Behaviors>
+                    </ListBox>
+                    <ListBox ItemsSource="{Binding Collection}" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
                         <i:Interaction.Behaviors>
                             <cstk:IgnoreMouseWheelBehavior />
                         </i:Interaction.Behaviors>
@@ -144,7 +174,11 @@
                             <cstk:ScrollParentWhenAtEdge />
                         </i:Interaction.Behaviors>
                     </ListBox>
-
+                    <ListBox ItemsSource="{Binding Collection}" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
+                        <i:Interaction.Behaviors>
+                            <cstk:ScrollParentWhenAtEdge />
+                        </i:Interaction.Behaviors>
+                    </ListBox>
                 </StackPanel>
             </ScrollViewer>
         </UniformGrid>

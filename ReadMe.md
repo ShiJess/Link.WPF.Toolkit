@@ -10,7 +10,7 @@ WPF Controls - [User Guide](docs/ReadMe.md)
 |[`IPAddrBox` Control](docs/IPAddrBox.md)| 
 -->
 
-## For User - How to Use
+## For User - Usage
 
 * Add Namespace to xaml code
     * Like this:
@@ -51,8 +51,8 @@ Need change to:
 ## RoadMap
 
 * About `ScrollViewer`:
-    * Nesting ScrollViewer -- Scroll Parent when internal scrollviewer scroll to end;
-    * Scroll Vertical After Horizontal & Scroll Horizontal After Vertical
+    * ~~Nesting ScrollViewer -- Scroll Parent when internal scrollviewer scroll to end;~~
+    * ~~Scroll Vertical After Horizontal & Scroll Horizontal After Vertical~~
     * Auto Scroll[When content change] - always scroll to end & When mouse is pressed, mouse wheel scroll disable
 * About `PasswordTextBox` - passwordbox/passwordtextbox
     * Password Binding Support

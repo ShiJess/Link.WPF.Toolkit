@@ -1,13 +1,13 @@
 ## ScrollViewer Helper - `ScrollViewerHelper`
 
-> Nesting ScrollViewer Scroll & ScrollViewer Scroll Horizontal
+> Nesting ScrollViewer Scroll & ScrollViewer Scroll Mode - Horizontal
 
 ### Sample Code
 
-* Use Attach Property   
+* Use Attach Property - **Recommend**   
     ``` xml
     <!--ScrollViewer Scroll Horizontal-->
-    <ListBox cstk:ScrollViewerHelper.ScrollHorizontal="True" >
+    <ListBox cstk:ScrollViewerHelper.ScrollMode="HorizontalOnly" >
         <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
                 <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
@@ -51,5 +51,5 @@
 
 * `cstk:ScrollViewerHelper.ScrollHorizontal` - support scrollviewer **Scroll Horizontal**
 * `cstk:ScrollViewerHelper.ScrollParent` - support nesting scrollviewer **Scroll Parent**
-* `IgnoreMouseWheelBehavior` - same as `ScrollViewerHelper.ScrollParent`
-* `ScrollParentWhenAtEdge` - same as 'ScrollViewerHelper.ScrollParent'
+* `IgnoreMouseWheelBehavior` - same as `ScrollViewerHelper.ScrollParent` + Disable scroll self
+* `ScrollParentWhenAtEdge` - same as 'ScrollViewerHelper.ScrollParent' 
