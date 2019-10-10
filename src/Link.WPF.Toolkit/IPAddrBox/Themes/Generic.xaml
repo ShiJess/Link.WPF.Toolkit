@@ -46,7 +46,7 @@
         </Setter>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="LightGray"/>
-        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Focusable" Value="True" />
         <Setter Property="Foreground" Value="Black" />
         <!--<Setter Property="Padding" Value="0,2" />
         <Setter Property="FontSize" Value="28" />-->

@@ -120,6 +120,7 @@
     </Window.DataContext>
     <Grid>
         <UniformGrid >
+            <TextBox />
             <cstk:IPAddrBox Text="192.168.1.1" />
             <cstk:WaitingMask Visibility="Visible" />
             <cstk:ImageViewer Source="Resources/Image_Temp.png" />

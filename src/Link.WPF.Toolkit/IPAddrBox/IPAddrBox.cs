@@ -52,6 +52,33 @@ namespace Link.WPF.Toolkit
             base.OnTextChanged(e);
         }
 
+        protected override void OnGotKeyboardFocus(KeyboardFocusChangedEventArgs e)
+        {
+            base.OnGotKeyboardFocus(e);
+
+            //if (!IPTextA.IsFocused && !IPTextB.IsFocused && !IPTextC.IsFocused && !IPTextD.IsFocused)
+            if (!IPTextA.IsKeyboardFocused && !IPTextB.IsKeyboardFocused && !IPTextC.IsKeyboardFocused && !IPTextD.IsKeyboardFocused)
+            {
+                if (!string.IsNullOrWhiteSpace(IPTextD.Text) || !string.IsNullOrWhiteSpace(Text))
+                {
+                    IPTextD.Focus();
+                }
+                //else if ((e.OriginalSource is IPAddrBox) && !string.IsNullOrWhiteSpace((e.OriginalSource as IPAddrBox).Text))
+                //{
+                //    IPTextD.Focus();
+                //}
+                //else if ((e.NewFocus is IPAddrBox) && !string.IsNullOrWhiteSpace((e.NewFocus as IPAddrBox).Text))
+                //{
+                //    IPTextD.Focus();
+                //}
+                else
+                {
+                    IPTextA.Focus();
+                }
+                //e.Handled = true;
+            }
+        }
+
         private static void RefreshIPSegText(IPAddrBox iPAddrBox)
         {
             if (!string.IsNullOrWhiteSpace(iPAddrBox.Text))
@@ -293,23 +320,41 @@ namespace Link.WPF.Toolkit
                         e.Handled = true;
                     }
                     break;
+                case Key.Enter:
+                    break;
+                #endregion
+
+                #region move focus
                 case Key.Back:
                     {
                         TextBox textBox = sender as TextBox;
                         if (textBox.CaretIndex == 0)
                         {
                             if (textBox != IPTextA)
+                            {
                                 textBox.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
 
+                                if (IPTextA.IsKeyboardFocused)
+                                {
+                                    IPTextA.CaretIndex = IPTextA.Text.Length;
+                                }
+                                else if (IPTextB.IsKeyboardFocused)
+                                {
+                                    IPTextB.CaretIndex = IPTextB.Text.Length;
+                                }
+                                else if (IPTextC.IsKeyboardFocused)
+                                {
+                                    IPTextC.CaretIndex = IPTextC.Text.Length;
+                                }
+                                else if (IPTextD.IsKeyboardFocused)
+                                {
+                                    IPTextD.CaretIndex = IPTextD.Text.Length;
+                                }
+                            }
                             e.Handled = true;
                         }
                     }
                     break;
-                case Key.Enter:
-                    break;
-                #endregion
-
-                #region move focus
                 case Key.Tab:
                     {
 
@@ -321,7 +366,26 @@ namespace Link.WPF.Toolkit
                         if (textBox.CaretIndex == 0)
                         {
                             if (textBox != IPTextA)
+                            {
                                 textBox.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
+
+                                if (IPTextA.IsKeyboardFocused)
+                                {
+                                    IPTextA.CaretIndex = IPTextA.Text.Length;
+                                }
+                                else if (IPTextB.IsKeyboardFocused)
+                                {
+                                    IPTextB.CaretIndex = IPTextB.Text.Length;
+                                }
+                                else if (IPTextC.IsKeyboardFocused)
+                                {
+                                    IPTextC.CaretIndex = IPTextC.Text.Length;
+                                }
+                                else if (IPTextD.IsKeyboardFocused)
+                                {
+                                    IPTextD.CaretIndex = IPTextD.Text.Length;
+                                }
+                            }
                             e.Handled = true;
                         }
                     }
@@ -332,7 +396,26 @@ namespace Link.WPF.Toolkit
                         if (textBox.CaretIndex == textBox.Text.Length)
                         {
                             if (textBox != IPTextD)
+                            {
                                 textBox.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
+                                if (IPTextA.IsKeyboardFocused)
+                                {
+                                    IPTextA.CaretIndex = 0;
+                                }
+                                else if (IPTextB.IsKeyboardFocused)
+                                {
+                                    IPTextB.CaretIndex = 0;
+                                }
+                                else if (IPTextC.IsKeyboardFocused)
+                                {
+                                    IPTextC.CaretIndex = 0;
+                                }
+                                else if (IPTextD.IsKeyboardFocused)
+                                {
+                                    IPTextD.CaretIndex = 0;
+                                }
+                            }
                             e.Handled = true;
                         }
                     }
