@@ -305,10 +305,16 @@ namespace Link.WPF.Toolkit
                         }
                     }
                     break;
+                case Key.Enter:
+                    break;
                 #endregion
 
                 #region move focus
                 case Key.Tab:
+                    {
+
+                    }
+                    break;
                 case Key.Left:
                     {
                         TextBox textBox = sender as TextBox;
@@ -383,7 +389,7 @@ namespace Link.WPF.Toolkit
                     break;
             }
         }
-        
+
         private void Value_PreviewKeyUp(object sender, KeyEventArgs e)
         {
             //throw new NotImplementedException();
