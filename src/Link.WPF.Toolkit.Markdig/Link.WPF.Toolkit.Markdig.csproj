@@ -4,7 +4,7 @@
     <TargetFrameworks>net45;net40</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Version>0.0.1-beta</Version>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <AssemblyVersion>0.0.0.1</AssemblyVersion>
@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\LICENSE.txt">
+    <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -81,3 +81,6 @@ Need change to:
 
 * EnumToDisplayNameConverter Enum Extention
     * add Ignore Attribute —— Enum GetValues ignore signed
+
+* Wait Mask
+    * delay hide —— e.g:hide wait message delay one second
