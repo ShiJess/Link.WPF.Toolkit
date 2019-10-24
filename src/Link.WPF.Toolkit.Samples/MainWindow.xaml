@@ -13,21 +13,21 @@
     <Window.Resources>
 
         <SampleDataSource:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
-        
+
         <DataTemplate x:Key="DataTemplate1">
             <Grid>
                 <Image Source="{Binding Image}" Width="50" Height="50" />
             </Grid>
         </DataTemplate>
-        
+
         <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
             <VirtualizingStackPanel Orientation="Horizontal" IsItemsHost="True"/>
         </ItemsPanelTemplate>
-        
+
         <ItemsPanelTemplate x:Key="ItemsPanelTemplate2">
             <VirtualizingStackPanel Orientation="Vertical" IsItemsHost="True"/>
         </ItemsPanelTemplate>
-        
+
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
@@ -182,6 +182,10 @@
                     </ListBox>
                 </StackPanel>
             </ScrollViewer>
+
+            <cstk:RichTextBlock ParaIndent="10" InnerText="11111" />
+
+
         </UniformGrid>
 
     </Grid>

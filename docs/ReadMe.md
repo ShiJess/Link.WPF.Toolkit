@@ -13,6 +13,7 @@
 |[`IPAddrBox` Control](IPAddrBox.md)| IP Address Control - Like `192.168.1.1` |
 |[`ImageViewer` Control](ImageViewer.md)| Image Viewer With Zoom & Drag |
 |[`ScrollViewer` Helper](ScrollViewer.md)| ScrollView Helper - Nesting and Horizontal process|
+|[`RichTextBlock` Control](RichTextBlock.md)| Rich TextBlock - Para Indent Support |
 
 
 * Common ValueConverter
