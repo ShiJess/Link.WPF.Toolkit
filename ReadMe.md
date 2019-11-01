@@ -81,6 +81,8 @@ Need change to:
 
 * EnumToDisplayNameConverter Enum Extention
     * add Ignore Attribute —— Enum GetValues ignore signed
+    * 转中文数字大小写
 
 * Wait Mask
     * delay hide —— e.g:hide wait message delay one second
+* 常用validaterule-如数字。。。
