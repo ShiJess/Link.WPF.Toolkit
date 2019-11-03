@@ -30,5 +30,20 @@ namespace Link.WPF.Toolkit.Samples
             LinkMessageBox messageBox = new LinkMessageBox();
             messageBox.ShowDialog();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.mask.ShowMask();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.mask.HideMask();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.mask.ShowWait();
+        }
     }
 }

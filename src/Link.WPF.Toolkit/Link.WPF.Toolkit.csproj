@@ -1,26 +1,38 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <!--Sdk="Microsoft.NET.Sdk.WindowsDesktop"-->
+  <!--Microsoft.NET.Sdk.WindowsDesktop-->
   <PropertyGroup>
-    <TargetFrameworks>net45;net40</TargetFrameworks>
-    <Version>0.1.0.6</Version>
+    <TargetFrameworks>net45;net40;netcoreapp3.0</TargetFrameworks>
+    <Version>0.1.0.7</Version>
     <UseWPF>true</UseWPF>
-    <AssemblyVersion>0.1.0.6</AssemblyVersion>
-    <FileVersion>0.1.0.6</FileVersion>
+    <AssemblyVersion>0.1.0.7</AssemblyVersion>
+    <FileVersion>0.1.0.7</FileVersion>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Description>WPF Controls:
-IPAddrBox
-ImageViewer
-PasswordTextBox
-ScrollViewerHelper</Description>
+    <Description>
+      WPF Controls:
+      IPAddrBox
+      ImageViewer
+      PasswordTextBox
+      ScrollViewerHelper
+      Wait Mask
+</Description>
     <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit,ImageViewer,Password,ScrollViewer</PackageTags>
-    <PackageReleaseNotes>fix ipbox focus bug;</PackageReleaseNotes>
+    <PackageReleaseNotes>fix ipbox edit bug;
+wait mask support;</PackageReleaseNotes>
     <Authors>Jess</Authors>
   </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+    <Compile Remove="Behaviors\**" />
+    <EmbeddedResource Remove="Behaviors\**" />
+    <None Remove="Behaviors\**" />
+    <Page Remove="Behaviors\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="DateTimePicker\Themes\Generic.xaml" />
@@ -29,12 +41,21 @@ ScrollViewerHelper</Description>
     <None Remove="WaitingMask.xaml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+    <!--<Reference Include="PresentationFramework" />-->
+    <!--<PackageReference Include="Microsoft.Windows.Compatibility">
+      <Version>3.0.0</Version>
+    </PackageReference>-->
+    <!--<PackageReference Include="NETStandard.Library">
+      <Version>2.0.3</Version>
+    </PackageReference>-->
+
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <!--<Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <!--<Reference Include="System.Xaml" />-->
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -44,25 +65,39 @@ ScrollViewerHelper</Description>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-  </ItemGroup>
-  
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Data.DataSetExtensions" />-->
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\External\NET4\System.Windows.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <!--<Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />-->
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\External\NET45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
-  
-  <ItemGroup>
-    <!--<Compile Update="IPBox\IPBox.cs">     
+
+  <!--<ItemGroup>
+    -->
+  <!--<Compile Update="IPBox\IPBox.cs">     
       <SubType>Code</SubType>
     </Compile>-->
+  <!--
     <Page Include="DateTimePicker\Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,7 +123,7 @@ ScrollViewerHelper</Description>
     <Page Include="WaitingMask\WaitingMask.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <None Include="..\..\LICENSE">
@@ -97,10 +132,10 @@ ScrollViewerHelper</Description>
     </None>
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <None Update="WaitingMask\WaitingMask.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>

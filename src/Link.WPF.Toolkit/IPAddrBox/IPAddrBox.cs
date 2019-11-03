@@ -328,7 +328,7 @@ namespace Link.WPF.Toolkit
                 case Key.Back:
                     {
                         TextBox textBox = sender as TextBox;
-                        if (textBox.CaretIndex == 0)
+                        if (textBox.CaretIndex == 0 && string.IsNullOrWhiteSpace(textBox.SelectedText))
                         {
                             if (textBox != IPTextA)
                             {
@@ -467,6 +467,8 @@ namespace Link.WPF.Toolkit
                     break;
                 #endregion
 
+                case Key.Delete:
+                    break;
                 default:
                     e.Handled = true;
                     break;

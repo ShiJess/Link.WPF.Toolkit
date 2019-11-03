@@ -122,7 +122,11 @@
         <UniformGrid >
             <TextBox />
             <cstk:IPAddrBox Text="192.168.1.1" />
-            <cstk:WaitingMask Visibility="Visible" />
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Show Mask" Click="Button_Click_1"/>
+                <Button Content="Show WaitMask" Click="Button_Click_3"/>
+                <Button Content="Hide Mask" Click="Button_Click_2"/>
+            </StackPanel>
             <cstk:ImageViewer Source="Resources/Image_Temp.png" />
             <Button x:Name="button" Content="Button" Click="Button_Click"/>
             <TextBox x:Name="textBox" Background="Red" Text="TextBox"/>
@@ -187,5 +191,8 @@
            
         </UniformGrid>
 
+
+        <cstk:WaitingMask x:Name="mask" Visibility="Collapsed" />
+        
     </Grid>
 </Window>
