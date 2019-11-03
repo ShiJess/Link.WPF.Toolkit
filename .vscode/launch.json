@@ -3,13 +3,24 @@
     // 悬停以查看现有属性的描述。
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
+    "configurations": [       
         {
             "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/Link.WPF.Toolkit/bin/Debug/netcoreapp3.0/Link.WPF.Toolkit.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": ".NET Framework Launch (console)",
             "type": "clr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.exe>",
+            "program": "${workspaceFolder}/src/Link.WPF.Toolkit.Samples/bin/Debug/Link.WPF.Toolkit.Samples.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

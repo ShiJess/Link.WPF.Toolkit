@@ -6,7 +6,9 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe",
+           // C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin
+          // C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe
+            "command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
             "args": [
                 // Ask msbuild to generate full paths for file names.
                 "/property:GenerateFullPaths=true",
