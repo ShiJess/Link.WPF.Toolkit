@@ -2,6 +2,16 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg)](https://www.nuget.org/packages/Link.WPF.Toolkit/)
 
+<img src="Link.WPF.Toolkit.png" width=100 height=100 />
+
+<!--
+<div align=center>
+
+![logo](Link.WPF.Toolkit.png)
+
+</div>
+-->
+
 WPF Controls - [User Guide](docs/ReadMe.md)
 
 <!--

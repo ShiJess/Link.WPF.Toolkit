@@ -9,7 +9,6 @@
     <FileVersion>0.1.0.7</FileVersion>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
-    <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -20,11 +19,16 @@
       PasswordTextBox
       ScrollViewerHelper
       Wait Mask
-</Description>
+    </Description>
     <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit,ImageViewer,Password,ScrollViewer</PackageTags>
-    <PackageReleaseNotes>fix ipbox edit bug;
-wait mask support;</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      fix ipbox edit bug;
+      wait mask support;
+    </PackageReleaseNotes>
     <Authors>Jess</Authors>
+    <!--<PackageIconUrl>https://raw.githubusercontent.com/ShiJess/Link.WPF.Toolkit/master/Link.WPF.Toolkit.png</PackageIconUrl>-->
+    <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
+
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
@@ -137,5 +141,14 @@ wait mask support;</PackageReleaseNotes>
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>-->
+
+  <ItemGroup>
+
+    <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+
+  </ItemGroup>
 
 </Project>

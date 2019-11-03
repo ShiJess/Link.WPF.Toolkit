@@ -75,7 +75,7 @@ namespace Link.WPF.Toolkit
         /// <summary>
         /// 
         /// </summary>
-        private bool ShowPassword = false;
+        ///private bool ShowPassword = false;
         private string password = string.Empty;
 
         public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(string), typeof(PasswordTextBox), new UIPropertyMetadata(String.Empty, OnFormatStringChanged));
