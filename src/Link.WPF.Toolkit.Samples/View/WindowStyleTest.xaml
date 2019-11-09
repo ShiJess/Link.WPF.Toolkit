@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples.View"
         mc:Ignorable="d"
-        Title="WindowStyleTest" Height="450" Width="800" Style="{DynamicResource WindowStyle_Default}">
+        Title="WindowStyleTest" Height="450" Width="800" Style="{DynamicResource WindowStyle_Default}" Foreground="#FFDBDBDB">
    
     <Grid>
         <UniformGrid>

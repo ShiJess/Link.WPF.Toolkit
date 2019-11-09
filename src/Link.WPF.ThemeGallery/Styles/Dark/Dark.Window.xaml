@@ -3,13 +3,68 @@
                     xmlns:local="clr-namespace:Link.WPF.ThemeGallery.Styles.Dark"
                     xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
                     >
+
+    <Style x:Key="Button_System" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#00DDDDDD"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Foreground" Value="#FFA6A8A9"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="#FF007ACC"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FFCFE6F5"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="#FF3E3E40"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FFDBDBDB"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="WindowCtrlButtonStyle" TargetType="{x:Type cstk:WindowCtrlButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cstk:WindowCtrlButton}">
+                    <!--<Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">-->
+                    <StackPanel cstk:WindowChromeEx.IsHitTestVisibleInChrome="True" Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" >
+                        <Button x:Name="PART_MinButton" Content=" ─ " FontSize="{TemplateBinding FontSize}" Style="{StaticResource Button_System}" />
+                        <Button x:Name="PART_MaxButton" Content=" ☐ " FontSize="{TemplateBinding FontSize}" Style="{StaticResource Button_System}"/>
+                        <Button x:Name="PART_CloseButton" Content=" ╳ " FontSize="{TemplateBinding FontSize}" Style="{StaticResource Button_System}"/>
+                    </StackPanel>
+                    <!--</Border>-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+    </Style>
+
     <Style x:Key="WindowStyle_Default" TargetType="{x:Type Window}">
-        <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>-->
-        <Setter Property="Background" Value="#FF292E34"/>
-        <Setter Property="BorderBrush" Value="#FF0A8FD4"/>
+        <Setter Property="Background" Value="#FF252526"/>
+        <Setter Property="BorderBrush" Value="#FF3E3E45"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="#FFF1F1F1"/>
         <!--<Setter Property="WindowStyle" Value="None"/>-->
         <Setter Property="ResizeMode" Value="NoResize"/>
         <Setter Property="FontFamily" Value="Microsoft YaHei"/>
@@ -30,7 +85,7 @@
                                         <TextBlock Text="{TemplateBinding Title}" Margin="0" VerticalAlignment="Center" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" Foreground="White" />
                                     </StackPanel>
                                 </Border>
-                                <cstk:WindowCtrlButton HorizontalAlignment="Right" VerticalAlignment="Top" BelongWindow="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <cstk:WindowCtrlButton HorizontalAlignment="Right" VerticalAlignment="Top" BelongWindow="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource WindowCtrlButtonStyle}"/>
                                 <ContentPresenter Grid.Row="1" />
                             </Grid>
                         </AdornerDecorator>
@@ -49,6 +104,11 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="#FF2D2D30"/>
+                <Setter Property="BorderBrush" Value="#FF0079CB"/>
+                <Setter Property="Foreground" Value="#FFF1F1F1"/>
+            </Trigger>
             <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -67,18 +127,18 @@
                                                     <TextBlock Text="{TemplateBinding Title}" Margin="0" VerticalAlignment="Center" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" Foreground="White" />
                                                 </StackPanel>
                                             </Border>
-                                            <cstk:WindowCtrlButton HorizontalAlignment="Right" VerticalAlignment="Top" BelongWindow="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            <cstk:WindowCtrlButton HorizontalAlignment="Right" VerticalAlignment="Top" BelongWindow="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource WindowCtrlButtonStyle}"/>
                                             <ContentPresenter Grid.Row="1" />
                                         </Grid>
                                     </AdornerDecorator>
                                     <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" IsTabStop="false" Visibility="Collapsed" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </Border>
-                              
+
                             <ControlTemplate.Triggers>
                                 <Trigger Property="WindowState" Value="Maximized">
-                                        <Setter Property="Margin" TargetName="win_content" Value="8"/>
-                                    </Trigger>
+                                    <Setter Property="Margin" TargetName="win_content" Value="8"/>
+                                </Trigger>
                                 <MultiTrigger>
                                     <MultiTrigger.Conditions>
                                         <Condition Property="ResizeMode" Value="CanResizeWithGrip"/>
@@ -107,7 +167,7 @@
                                 </Border>
                                 <ContentPresenter x:Name="win_content"/>
                                 <Border Margin="{Binding Margin, ElementName=win_content}" Background="{x:Null}" >
-                                    <cstk:WindowCtrlButton BelongWindow="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                                    <cstk:WindowCtrlButton BelongWindow="{Binding Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{DynamicResource WindowCtrlButtonStyle}"/>
                                 </Border>
                             </Grid>
                         </AdornerDecorator>
@@ -137,6 +197,6 @@
         <Setter Property="WindowChrome.ResizeGripDirection" Value="BottomRight"/>-->
     </Style>
 
-   
-    
+
+
 </ResourceDictionary>

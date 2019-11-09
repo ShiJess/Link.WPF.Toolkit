@@ -6,14 +6,17 @@
     <ApplicationIcon />
     <OutputType>WinExe</OutputType>
     <StartupObject>Link.WPF.Toolkit.Samples.App</StartupObject>
+    <AssemblyName>Link.WPF.Toolkit.Samples</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="packages.config" />
+    <None Remove="Resources\Image_Temp.png" />
+    <None Remove="SampleData\SampleDataSource\SampleDataSource_Files\image01.png" />
+    <None Remove="SampleData\SampleDataSource\SampleDataSource_Files\image02.png" />
+    <None Remove="SampleData\SampleDataSource\SampleDataSource_Files\image03.png" />
+    <None Remove="SampleData\SampleDataSource\SampleDataSource_Files\image04.png" />
+    <None Remove="SampleData\SampleDataSource\SampleDataSource_Files\image05.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +28,15 @@
     <ProjectReference Include="..\Link.WPF.ThemeGallery\Link.WPF.ThemeGallery.csproj" />
     <ProjectReference Include="..\Link.WPF.Toolkit.Markdig\Link.WPF.Toolkit.Markdig.csproj" />
     <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Image_Temp.png" />
+    <Resource Include="SampleData\SampleDataSource\SampleDataSource_Files\image01.png" />
+    <Resource Include="SampleData\SampleDataSource\SampleDataSource_Files\image02.png" />
+    <Resource Include="SampleData\SampleDataSource\SampleDataSource_Files\image03.png" />
+    <Resource Include="SampleData\SampleDataSource\SampleDataSource_Files\image04.png" />
+    <Resource Include="SampleData\SampleDataSource\SampleDataSource_Files\image05.png" />
   </ItemGroup>
 
  

@@ -1,29 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net40</TargetFrameworks><!--;netcoreapp3.0-->
+    <TargetFrameworks>net45;net40</TargetFrameworks>
+    <!--;netcoreapp3.0-->
     <UseWPF>true</UseWPF>
+    <Version>0.1.0.1</Version>
+    <Authors>Jess</Authors>
+    <Description>theme dark default style;</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
+    <PackageTags>WPF Styles,Themes</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Page Update="Themes\Theme.Blue.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Theme.Light.xaml">
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-
     <Reference Include="Microsoft.Windows.Shell">
       <HintPath>..\External\NET4\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
-
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
 </Project>
