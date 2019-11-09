@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Link.WPF.Toolkit.Samples.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,13 @@ namespace Link.WPF.Toolkit.Samples
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             this.mask.ShowWait();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            WindowStyleTest win = new WindowStyleTest();
+            win.Owner = this;
+            win.ShowDialog();
         }
     }
 }

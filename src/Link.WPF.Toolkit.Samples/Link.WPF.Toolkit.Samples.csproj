@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\WindowStyleTest.xaml.cs">
+      <DependentUpon>WindowStyleTest.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\WindowStyleTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -108,6 +115,10 @@
     <None Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Link.WPF.ThemeGallery\Link.WPF.ThemeGallery.csproj">
+      <Project>{801cfb78-fb15-4646-8358-c74774a2e29e}</Project>
+      <Name>Link.WPF.ThemeGallery</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Link.WPF.Toolkit.Markdig\Link.WPF.Toolkit.Markdig.csproj">
       <Project>{b12e9e71-1a00-483c-84cb-bc39f678fe08}</Project>
       <Name>Link.WPF.Toolkit.Markdig</Name>

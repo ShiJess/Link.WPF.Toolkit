@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Link.WPF.ThemeGallery.Themes">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.Button.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

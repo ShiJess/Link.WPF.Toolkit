@@ -120,6 +120,7 @@
     </Window.DataContext>
     <Grid>
         <UniformGrid >
+            <Button Content="Test Theme-Style" Click="Button_Click_4" />
             <TextBox />
             <cstk:IPAddrBox Text="192.168.1.1" />
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
