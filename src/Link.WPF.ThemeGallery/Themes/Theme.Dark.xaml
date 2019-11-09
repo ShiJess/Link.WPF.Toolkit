@@ -3,7 +3,11 @@
                     xmlns:local="clr-namespace:Link.WPF.ThemeGallery.Themes">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.TextBlock.xaml" />
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.TextBox.xaml" />
         <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.Button.xaml" />
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.CheckBox.xaml" />
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.Window.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net40;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net45;net40</TargetFrameworks><!--;netcoreapp3.0-->
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Page Update="Themes\Theme.Blue.xaml">
@@ -14,4 +18,12 @@
     </Page>
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\External\NET4\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+
+  </ItemGroup>
+  
 </Project>

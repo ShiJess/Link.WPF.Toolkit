@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Link.WPF.Toolkit.Samples.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="packages.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLight" Version="5.4.1.1" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Link.WPF.ThemeGallery\Link.WPF.ThemeGallery.csproj" />
+    <ProjectReference Include="..\Link.WPF.Toolkit.Markdig\Link.WPF.Toolkit.Markdig.csproj" />
+    <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
+  </ItemGroup>
+
+ 
+  
+</Project>

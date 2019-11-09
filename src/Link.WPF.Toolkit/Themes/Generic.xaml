@@ -9,6 +9,7 @@
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/ImageViewer/Themes/Generic.xaml" />
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/PasswordBox/Themes/Generic.xaml" />
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/DateTimePicker/Themes/Generic.xaml" />
+        <ResourceDictionary Source="/Link.WPF.Toolkit;component/WindowCtrlButton/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <converter:EnumToDisplayNameConverter x:Key="EnumToNameConverter"/>

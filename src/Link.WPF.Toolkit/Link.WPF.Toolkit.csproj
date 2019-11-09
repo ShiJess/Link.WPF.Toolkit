@@ -2,7 +2,8 @@
   <!--Sdk="Microsoft.NET.Sdk.WindowsDesktop"-->
   <!--Microsoft.NET.Sdk.WindowsDesktop-->
   <PropertyGroup>
-    <TargetFrameworks>net45;net40;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net45;net40</TargetFrameworks>
+    <!--;netcoreapp3.0-->
     <Version>0.1.0.7</Version>
     <UseWPF>true</UseWPF>
     <AssemblyVersion>0.1.0.7</AssemblyVersion>
@@ -74,8 +75,18 @@
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\External\NET4\System.Windows.Interactivity.dll</HintPath>
     </Reference>
-  </ItemGroup>
+    <!--<Reference Include="RibbonControlsLibrary">
+      <HintPath>..\External\NET4\RibbonControlsLibrary.dll</HintPath>
+    </Reference>-->
 
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\External\NET4\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    
+    <!--<PackageReference Include="ControlzEx" Version="3.0.2.4" />
+    <Page Remove="WindowCtrlButton\Themes\Generic.xaml" />-->
+  </ItemGroup>
+   
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <!--<Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
@@ -95,7 +106,7 @@
       <HintPath>..\External\NET45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
-
+ 
   <!--<ItemGroup>
     -->
   <!--<Compile Update="IPBox\IPBox.cs">     
@@ -150,5 +161,10 @@
     </None>
 
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WindowCtrlButton\Themes\" />
+  </ItemGroup>
+
 
 </Project>

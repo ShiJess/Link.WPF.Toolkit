@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <!--<Project Sdk="Microsoft.NET.Sdk">-->
   <PropertyGroup>
-    <TargetFrameworks>net45;net40;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net45;net40</TargetFrameworks><!--;netcoreapp3.0-->
     <UseWPF>true</UseWPF>
     <Version>0.0.1-beta</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
