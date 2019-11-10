@@ -4,10 +4,8 @@
   <PropertyGroup>
     <TargetFrameworks>net45;net40</TargetFrameworks>
     <!--;netcoreapp3.0-->
-    <Version>0.1.0.7</Version>
-    <UseWPF>true</UseWPF>
-    <AssemblyVersion>0.1.0.7</AssemblyVersion>
-    <FileVersion>0.1.0.7</FileVersion>
+    <Version>0.1.0.8</Version>
+    <UseWPF>true</UseWPF>    
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <OutputType>Library</OutputType>
@@ -22,10 +20,8 @@
       Wait Mask
     </Description>
     <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit,ImageViewer,Password,ScrollViewer</PackageTags>
-    <PackageReleaseNotes>
-      fix ipbox edit bug;
-      wait mask support;
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>add window control button;
+</PackageReleaseNotes>
     <Authors>Jess</Authors>
     <!--<PackageIconUrl>https://raw.githubusercontent.com/ShiJess/Link.WPF.Toolkit/master/Link.WPF.Toolkit.png</PackageIconUrl>-->
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
