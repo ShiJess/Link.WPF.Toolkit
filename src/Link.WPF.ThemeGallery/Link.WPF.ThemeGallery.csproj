@@ -4,21 +4,27 @@
     <TargetFrameworks>net45;net40</TargetFrameworks>
     <!--;netcoreapp3.0-->
     <UseWPF>true</UseWPF>
-    <Version>0.1.0.1</Version>
+    <Version>0.1.0.2-pre</Version>
     <Authors>Jess</Authors>
     <Description>theme dark default style;</Description>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile></PackageLicenseFile>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <PackageTags>WPF Styles,Themes</PackageTags>
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetDependDLLFiles</TargetsForTfmSpecificBuildOutput>
+    <PackageReleaseNotes>fix dependcy dll miss problem;</PackageReleaseNotes>
   </PropertyGroup>
 
+  <Target Name="GetDependDLLFiles">
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+      <BuildOutputInPackage Include="..\External\NET4\Microsoft.Windows.Shell.dll">
+      </BuildOutputInPackage>
+    </ItemGroup>
+  </Target>
+
   <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
     <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
