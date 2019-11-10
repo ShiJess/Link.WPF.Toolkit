@@ -15,17 +15,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
-  <!--<ItemGroup>
-    <Page Update="Themes\Theme.Blue.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Theme.Light.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>-->
+  <ItemGroup>
+    <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
+  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Reference Include="Microsoft.Windows.Shell">
@@ -33,18 +35,4 @@
     </Reference>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  
 </Project>

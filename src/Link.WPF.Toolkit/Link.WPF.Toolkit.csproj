@@ -4,8 +4,8 @@
   <PropertyGroup>
     <TargetFrameworks>net45;net40</TargetFrameworks>
     <!--;netcoreapp3.0-->
-    <Version>0.1.0.8</Version>
-    <UseWPF>true</UseWPF>    
+    <Version>0.1.0.9</Version>
+    <UseWPF>true</UseWPF>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <OutputType>Library</OutputType>
@@ -20,13 +20,37 @@
       Wait Mask
     </Description>
     <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit,ImageViewer,Password,ScrollViewer</PackageTags>
-    <PackageReleaseNotes>add window control button;
-</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      fix depend dll miss bug;
+    </PackageReleaseNotes>
     <Authors>Jess</Authors>
-    <!--<PackageIconUrl>https://raw.githubusercontent.com/ShiJess/Link.WPF.Toolkit/master/Link.WPF.Toolkit.png</PackageIconUrl>-->
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
-
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetDependDLLFiles</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
+
+  <Target Name="GetDependDLLFiles">
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+      <BuildOutputInPackage Include="..\External\NET4\System.Windows.Interactivity.dll">
+      </BuildOutputInPackage>
+      <BuildOutputInPackage Include="..\External\NET4\Microsoft.Windows.Shell.dll">
+      </BuildOutputInPackage>
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+      <BuildOutputInPackage Include="..\External\NET45\System.Windows.Interactivity.dll">
+      </BuildOutputInPackage>
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
     <Compile Remove="Behaviors\**" />
@@ -35,26 +59,14 @@
     <Page Remove="Behaviors\**" />
   </ItemGroup>
 
-  <!--<ItemGroup>
-    <None Remove="DateTimePicker\Themes\Generic.xaml" />
-    <None Remove="ImageViewer\Themes\Generic.xaml" />
-    <None Remove="PasswordBox\Themes\Generic.xaml" />
-    <None Remove="WaitingMask.xaml" />
-  </ItemGroup>-->
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
-  </ItemGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\External\NET4\System.Windows.Interactivity.dll</HintPath>
     </Reference>
-
     <Reference Include="Microsoft.Windows.Shell">
       <HintPath>..\External\NET4\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
-
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
@@ -62,20 +74,6 @@
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\External\NET45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>
