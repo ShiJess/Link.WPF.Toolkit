@@ -83,6 +83,9 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\WindowMainTest.xaml.cs">
+      <DependentUpon>WindowMainTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WindowStyleTest.xaml.cs">
       <DependentUpon>WindowStyleTest.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
     <Page Include="SampleData\SampleDataSource\SampleDataSource.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WindowMainTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\WindowStyleTest.xaml">
       <SubType>Designer</SubType>

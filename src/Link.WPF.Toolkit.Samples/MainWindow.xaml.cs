@@ -53,5 +53,12 @@ namespace Link.WPF.Toolkit.Samples
             win.Owner = this;
             win.ShowDialog();
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            WindowMainTest win = new WindowMainTest();
+            win.Owner = this;
+            win.ShowDialog();
+        }
     }
 }

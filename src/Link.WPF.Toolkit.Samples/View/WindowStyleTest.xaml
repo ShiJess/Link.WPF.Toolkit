@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples.View"
-        mc:Ignorable="d"
+        mc:Ignorable="d" ResizeMode="CanResize"
         Title="WindowStyleTest" Height="450" Width="800" Style="{DynamicResource WindowStyle_Default}" Foreground="#FFDBDBDB">
-   
+   <!---->
     <Grid>
         <UniformGrid>
             <TextBlock Text="test" Style="{DynamicResource TextBlock_Default}" />
