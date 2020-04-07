@@ -67,6 +67,7 @@ use .netstandard style *.proj
 * Add Style Lib - provide some common style
     * common control style, e.g:TextBox,Button,ComboBox,etc.
     * some company classical style imitation, e.g:google style,ms style,ali style,netease style,etc.
+    * attention:ContextMenu style,avoid separator exception
 
 
 * Markdown support —— https://github.com/Kryptos-FR/markdig.wpf
