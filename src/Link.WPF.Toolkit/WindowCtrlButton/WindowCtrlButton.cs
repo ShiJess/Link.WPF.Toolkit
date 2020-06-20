@@ -7,6 +7,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
+#if NET40
+using Microsoft.Windows.Shell;
+#else
+using System.Windows.Shell;
+#endif
+
 namespace Link.WPF.Toolkit
 {
     /// <summary>
@@ -65,10 +71,13 @@ namespace Link.WPF.Toolkit
                         break;
                 }
                 //MaxButton.ToolTip = this.BelongWindow.WindowState == WindowState.Maximized ? "还原" : "最大化";
+                BelongWindow.PreviewKeyUp += BelongWindow_PreviewKeyUp;
+                BelongWindow.StateChanged -= BelongWindow_StateChanged;
                 BelongWindow.StateChanged += BelongWindow_StateChanged;
                 BelongWindow_StateChanged(BelongWindow, new EventArgs());
             }
         }
+
 
         #region 附加控件
         private ButtonBase btn_min;
@@ -173,6 +182,62 @@ namespace Link.WPF.Toolkit
         }
 
         /// <summary>
+        /// 标志全屏前窗体状态
+        /// </summary>
+        private WindowState FullScreenWindowState = WindowState.Normal;
+        private WindowStyle FullScreenWindowStyle = WindowStyle.None;
+        private WindowChrome FullScreenWindowChrome = null;
+        private void BelongWindow_PreviewKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case System.Windows.Input.Key.Escape:
+                    {
+                        if (BelongWindow != null && this.FullScreen == true)
+                        {
+                            WindowChrome.SetWindowChrome(this.BelongWindow, FullScreenWindowChrome);
+                            this.BelongWindow.WindowState = FullScreenWindowState;
+                            this.BelongWindow.WindowStyle = FullScreenWindowStyle;
+
+                            this.FullScreen = false;
+                        }
+                    }
+                    break;
+                case System.Windows.Input.Key.F11:
+                    {
+                        if (BelongWindow != null && this.FullScreen == false
+                            && BelongWindow.ResizeMode == ResizeMode.CanResize)
+                        {
+                            FullScreenWindowChrome = WindowChrome.GetWindowChrome(this.BelongWindow);
+                            FullScreenWindowStyle = this.BelongWindow.WindowStyle;
+                            FullScreenWindowState = this.BelongWindow.WindowState;
+
+                            //this.BelongWindow.BeginInit();
+                            if (this.BelongWindow.WindowState == WindowState.Maximized)
+                            {
+                                this.BelongWindow.StateChanged -= BelongWindow_StateChanged;
+                                this.BelongWindow.WindowState = WindowState.Normal;
+                                this.BelongWindow.StateChanged += BelongWindow_StateChanged;
+                                //this.BelongWindow.Visibility = Visibility.Hidden;
+                            }
+                            this.BelongWindow.WindowStyle = WindowStyle.None;
+                            WindowChrome.SetWindowChrome(this.BelongWindow, null);
+                            this.BelongWindow.WindowState = WindowState.Maximized;
+                            this.BelongWindow.Visibility = Visibility.Visible;
+                            this.BelongWindow.Focus();
+                            //this.BelongWindow.EndInit();
+                            //this.BelongWindow.Topmost = true;
+
+                            this.FullScreen = true;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
         /// 最小化
         /// </summary>
         /// <param name="sender"></param>
@@ -200,7 +265,26 @@ namespace Link.WPF.Toolkit
         }
 
         #endregion
+
+        public static readonly DependencyProperty FullScreenProperty = DependencyProperty.Register(
+           "FullScreen", typeof(bool), typeof(WindowCtrlButton), new PropertyMetadata(false));
+        /// <summary>
+        /// 是否时全屏显示
+        /// 全屏操作
+        /// </summary>
+        public bool FullScreen
+        {
+            get { return (bool)GetValue(FullScreenProperty); }
+            set { SetValue(FullScreenProperty, value); }
+        }
+
+        /// <summary>
+        /// 启用or禁用全屏功能
+        /// </summary>
+        public bool EnableFullScreen { get; set; } = true;
+
         #endregion
+
 
     }
 }

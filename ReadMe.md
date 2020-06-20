@@ -1,6 +1,8 @@
 ## Link.WPF.Toolkit & Link.WPF.ThemeGallery
 
-[![NuGet](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg)](https://www.nuget.org/packages/Link.WPF.Toolkit/)
+|Channel|Toolkit|ThemeGallery|
+|:--:|:--:|:--:|
+|NuGet| [![Link.WPF.Toolkit](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg)](https://www.nuget.org/packages/Link.WPF.Toolkit/) [![Link.WPF.Toolkit](https://img.shields.io/nuget/dt/Link.WPF.Toolkit)](https://www.nuget.org/packages/Link.WPF.Toolkit/) | [![Link.WPF.ThemeGallery](https://img.shields.io/nuget/v/Link.WPF.ThemeGallery.svg)](https://www.nuget.org/packages/Link.WPF.ThemeGallery/) [![Link.WPF.ThemeGallery](https://img.shields.io/nuget/dt/Link.WPF.ThemeGallery)](https://www.nuget.org/packages/Link.WPF.ThemeGallery/) |
 
 * WPF Controls - [User Guide](docs/ReadMe.md)
 * WPF Themes & Styles - [Choose Theme](docs/Theme.md)
@@ -51,7 +53,7 @@ use .netstandard style *.proj
 * About `DateTimePicker`
     * `Hour.Minute.Second` Support
 * Custom Window - `WindowChrome`
-    * Custom Min&Max&Close button
+    * ~~Custom Min&Max&Close button~~
     * F11 max process,need hide close button
 * MessageBox support customization
 * custom FileDialog,FolderBrowserDialog
@@ -65,6 +67,7 @@ use .netstandard style *.proj
 * Add Style Lib - provide some common style
     * common control style, e.g:TextBox,Button,ComboBox,etc.
     * some company classical style imitation, e.g:google style,ms style,ali style,netease style,etc.
+    * attention:ContextMenu style,avoid separator exception
 
 
 * Markdown support —— https://github.com/Kryptos-FR/markdig.wpf

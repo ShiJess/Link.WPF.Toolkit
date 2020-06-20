@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:SampleDataSource="clr-namespace:Expression.Blend.SampleData.SampleDataSource"   
         x:Class="Link.WPF.Toolkit.Samples.MainWindow" WindowState="Maximized"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
         Title="MainWindow" Height="800" Width="1000" ><!--Style="{DynamicResource WindowStyle_MainDefault}"-->
     <Window.Resources>
 
@@ -121,6 +121,7 @@
     <Grid>
         <UniformGrid >
             <Button Content="Test Theme-Style" Click="Button_Click_4" />
+            <Button Content="Test MainWindow-Style" Click="Button_Click_5" />
             <TextBox />
             <cstk:IPAddrBox Text="192.168.1.1" />
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">

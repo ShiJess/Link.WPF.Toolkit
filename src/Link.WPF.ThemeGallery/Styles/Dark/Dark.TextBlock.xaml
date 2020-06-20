@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Link.WPF.ThemeGallery.Styles.Dark">
     
+    <!--TextBlock设置默认样式会影响其他控件中的字体样式，导致一些控件的设置失效-->
     <Style x:Key="TextBlock_Default" TargetType="{x:Type TextBlock}">
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">

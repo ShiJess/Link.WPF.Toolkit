@@ -33,6 +33,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style TargetType="{x:Type local:WindowCtrlButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -40,19 +41,24 @@
                     <!--<Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">-->
-                    <StackPanel local:WindowChromeEx.IsHitTestVisibleInChrome="True" Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" >
+                    <StackPanel x:Name="t" local:WindowChromeEx.IsHitTestVisibleInChrome="True" Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" >
                         <Button x:Name="PART_MinButton" Content=" ─ " FontSize="{TemplateBinding FontSize}" Style="{StaticResource Button_System}" />
                         <Button x:Name="PART_MaxButton" Content=" ☐ " FontSize="{TemplateBinding FontSize}" Style="{StaticResource Button_System}"/>
                         <Button x:Name="PART_CloseButton" Content=" ╳ " FontSize="{TemplateBinding FontSize}" Style="{StaticResource Button_System}"/>
                     </StackPanel>
                     <!--</Border>-->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="FullScreen" Value="True">
+                            <Setter Property="Visibility" TargetName="t" Value="Collapsed" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Setter Property="Width" Value="120"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>       
     </Style>
 
 </ResourceDictionary>
