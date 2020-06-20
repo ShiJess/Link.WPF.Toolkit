@@ -189,7 +189,11 @@
             </ScrollViewer>
 
             <cstk:RichTextBlock ParaIndent="10" InnerText="11111" />
-           
+
+            <cstk:TimePicker Text="00:00:00" />
+
+            <cstk:DateTimePicker />
+
         </UniformGrid>
 
 
