@@ -1,5 +1,7 @@
 ## Link.WPF.Toolkit & Link.WPF.ThemeGallery
 
+[![License](https://img.shields.io/github/license/ShiJess/Link.WPF.Toolkit)](LICENSE)
+
 |Channel|Toolkit|ThemeGallery|
 |:--:|:--:|:--:|
 |NuGet| [![Link.WPF.Toolkit](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg)](https://www.nuget.org/packages/Link.WPF.Toolkit/) [![Link.WPF.Toolkit](https://img.shields.io/nuget/dt/Link.WPF.Toolkit)](https://www.nuget.org/packages/Link.WPF.Toolkit/) | [![Link.WPF.ThemeGallery](https://img.shields.io/nuget/v/Link.WPF.ThemeGallery.svg)](https://www.nuget.org/packages/Link.WPF.ThemeGallery/) [![Link.WPF.ThemeGallery](https://img.shields.io/nuget/dt/Link.WPF.ThemeGallery)](https://www.nuget.org/packages/Link.WPF.ThemeGallery/) |

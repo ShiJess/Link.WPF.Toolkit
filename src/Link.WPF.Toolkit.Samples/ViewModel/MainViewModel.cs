@@ -17,12 +17,12 @@ namespace Link.WPF.Toolkit.Samples.ViewModel
     public class MainViewModel : ViewModelBase
     {
 
-        private string password="123";
+        private string password = "123";
 
         public string Password
         {
             get { return password; }
-            set { Set(ref password, value); }
+            set { Set(() => Password, ref password, value); }
         }
 
 

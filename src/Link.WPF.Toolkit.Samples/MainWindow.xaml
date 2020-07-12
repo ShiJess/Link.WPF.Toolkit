@@ -59,7 +59,7 @@
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
                                     <Condition Property="IsGrouping" Value="true"/>
-                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                                    <!--<Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>-->
                                 </MultiTrigger.Conditions>
                                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
                             </MultiTrigger>
@@ -103,7 +103,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
+            <!--<Style.Triggers>
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
                         <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
@@ -111,7 +111,7 @@
                     </MultiTrigger.Conditions>
                     <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
                 </MultiTrigger>
-            </Style.Triggers>
+            </Style.Triggers>-->
         </Style>
 
     </Window.Resources>

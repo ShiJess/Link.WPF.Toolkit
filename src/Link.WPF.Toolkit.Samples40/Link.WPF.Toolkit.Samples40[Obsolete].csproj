@@ -7,6 +7,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Link.WPF.Toolkit.Samples.App</StartupObject>
     <AssemblyName>Link.WPF.Toolkit.Samples</AssemblyName>
+    <RootNamespace>Link.WPF.Toolkit.Samples</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
