@@ -240,6 +240,22 @@ namespace Link.WPF.Toolkit
             }
         }
 
+        public bool IsValidIP() {
+            return !string.IsNullOrWhiteSpace(base.Text);
+        }
+
+        /// <summary>
+        /// The purpose of this method is to detect incomplete input
+        /// </summary>
+        public bool IsValidInput() {
+            if (IsValidIP())
+                return true;
+            if (!string.IsNullOrWhiteSpace(this.IPTextA.Text+this.IPTextB.Text+this.IPTextC.Text+this.IPTextD.Text))
+                return false;
+            // full empty is acceptable as a valid input
+            return true;
+        }
+
         /// <summary>
         /// transfer every ipseg item to total Text property
         /// </summary>
