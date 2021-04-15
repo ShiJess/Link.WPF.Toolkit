@@ -3,14 +3,13 @@
   <!--Microsoft.NET.Sdk.WindowsDesktop-->
   <PropertyGroup>
     <TargetFrameworks>net45;net40</TargetFrameworks>
-    <!--;netcoreapp3.0-->
-    <Version>0.1.0.9</Version>
+    <!--;netcoreapp3.0;netstandard20-->
+    <Version>0.1.0.10</Version>
     <UseWPF>true</UseWPF>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <OutputType>Library</OutputType>
     <StartupObject />
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>
       WPF Controls:
       IPAddrBox
@@ -20,12 +19,11 @@
       Wait Mask
     </Description>
     <PackageTags>IPBox,iptextbox,ipaddress,ipaddresscontrol,ip,textbox,wpf,toolkit,ImageViewer,Password,ScrollViewer</PackageTags>
-    <PackageReleaseNotes>
-      fix depend dll miss bug;
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>add validip method;</PackageReleaseNotes>
     <Authors>Jess</Authors>
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetDependDLLFiles</TargetsForTfmSpecificBuildOutput>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <Target Name="GetDependDLLFiles">
@@ -42,10 +40,6 @@
   </Target>
 
   <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
     <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

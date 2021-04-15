@@ -7,7 +7,6 @@
     <Version>0.1.0.2-pre</Version>
     <Authors>Jess</Authors>
     <Description>theme dark default style;</Description>
-    <PackageLicenseFile></PackageLicenseFile>
     <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <PackageTags>WPF Styles,Themes</PackageTags>
