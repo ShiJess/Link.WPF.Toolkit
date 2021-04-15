@@ -82,3 +82,14 @@ use .netstandard style *.proj
 * Wait Mask
     * delay hide —— e.g:hide wait message delay one second
 * 常用validaterule-如数字。。。
+* 添加datagrid类似控件，
+    * 修改行功能：弹窗窗体or控件修改行
+    * datagrid_冻结行列
+    * DataGridTextExtColumn——控制editstyle输入
+* 进度条
+    * 圆形进度条
+* textboxext——isnumber属性，控制输入
+* 下拉框提供空项，直接置null
+* 文件浏览，文件保存-filebrowserdialog。。。
+* 定期刷新支持的listcollectionview——支持设置刷新模式
+    * 立即刷新&定时刷新&堆栈数量刷新
