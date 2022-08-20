@@ -87,9 +87,11 @@ use .netstandard style *.proj
     * datagrid_冻结行列
     * DataGridTextExtColumn——控制editstyle输入
 * 进度条
-    * 圆形进度条
+    * 圆形进度条 [在ThemeGallery中添加]
 * textboxext——isnumber属性，控制输入
 * 下拉框提供空项，直接置null
 * 文件浏览，文件保存-filebrowserdialog。。。
 * 定期刷新支持的listcollectionview——支持设置刷新模式
     * 立即刷新&定时刷新&堆栈数量刷新
+
+* Validation 数据验证，添加各类验证rule及界面验证 建议调用方法

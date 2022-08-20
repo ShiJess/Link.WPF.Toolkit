@@ -70,4 +70,15 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="PagingDataGrid\Themes\Generic.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

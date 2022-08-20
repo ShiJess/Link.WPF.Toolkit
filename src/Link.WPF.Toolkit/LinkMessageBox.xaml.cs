@@ -23,5 +23,7 @@ namespace Link.WPF.Toolkit
         {
             InitializeComponent();
         }
+
+        //public void Error() { }
     }
 }

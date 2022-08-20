@@ -6,6 +6,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/IPAddrBox/Themes/Generic.xaml" />
+        <ResourceDictionary Source="/Link.WPF.Toolkit;component/Pagination/Themes/Generic.xaml" />
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/ImageViewer/Themes/Generic.xaml" />
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/PasswordBox/Themes/Generic.xaml" />
         <ResourceDictionary Source="/Link.WPF.Toolkit;component/TimePicker/Themes/Generic.xaml" />
@@ -16,5 +17,7 @@
     <converter:EnumToDisplayNameConverter x:Key="EnumToNameConverter"/>
     <converter:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
     <converter:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    
+
     
 </ResourceDictionary>

@@ -10,6 +10,7 @@ namespace Link.WPF.Toolkit.Converter
 {
     /// <summary>
     /// bool inverse
+    /// 取非转换
     /// </summary>
     public class InverseBooleanConverter : IValueConverter
     {
