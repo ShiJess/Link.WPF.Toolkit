@@ -24,10 +24,17 @@
     ```
 
 * Use Behavior
-    * Add Refrence[Nuget add this automatically] - `System.Windows.Interactivity.dll`
+    * Add Refrence[Nuget add this automatically] 
+        * Net40 - `System.Windows.Interactivity.dll`
+        * Net45 and later - Nuget Package `Microsoft.Xaml.Behaviors.Wpf`
     * Add Namespace to xaml code:
+        * Net40
         ``` xml
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        ```
+        * Net45 and later
+        ``` xml
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         ```
     * Add Behavior code
         ``` xml

@@ -1,13 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net40</TargetFrameworks>
-    <!--;netcoreapp3.0-->
+    <TargetFrameworks>net40;net45;net462;netcoreapp3.1;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Version>0.1.0.2-pre</Version>
     <Authors>Jess</Authors>
     <Description>theme dark default style;</Description>
-    <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
+    <PackageProjectUrl>https://wpftoolkit.shisujie.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <PackageTags>WPF Styles,Themes</PackageTags>
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
@@ -16,6 +15,7 @@
     <PackageReleaseNotes>fix dependcy dll miss problem;</PackageReleaseNotes>
     <AssemblyName>Link.WPF.ThemeGallery</AssemblyName>
     <RootNamespace>Link.WPF.ThemeGallery</RootNamespace>
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
   </PropertyGroup>
 
   <Target Name="GetDependDLLFiles">
@@ -29,6 +29,10 @@
     <None Include="..\..\Link.WPF.Toolkit.png" Pack="true">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\ReadMe.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

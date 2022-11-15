@@ -6,16 +6,15 @@
 |:--:|:--:|:--:|
 |NuGet| [![Link.WPF.Toolkit](https://img.shields.io/nuget/v/Link.WPF.Toolkit.svg)](https://www.nuget.org/packages/Link.WPF.Toolkit/) [![Link.WPF.Toolkit](https://img.shields.io/nuget/dt/Link.WPF.Toolkit)](https://www.nuget.org/packages/Link.WPF.Toolkit/) | [![Link.WPF.ThemeGallery](https://img.shields.io/nuget/v/Link.WPF.ThemeGallery.svg)](https://www.nuget.org/packages/Link.WPF.ThemeGallery/) [![Link.WPF.ThemeGallery](https://img.shields.io/nuget/dt/Link.WPF.ThemeGallery)](https://www.nuget.org/packages/Link.WPF.ThemeGallery/) |
 
+### Guide Docs
+
 * WPF Controls - [User Guide](docs/ReadMe.md)
 * WPF Themes & Styles - [Choose Theme](docs/Theme.md)
 
-<!--
-|   |
-|:---:|
-|[`IPAddrBox` Control](docs/IPAddrBox.md)| 
--->
 
 ## For User - Usage
+
+> More See Guide Docs
 
 * Add Namespace to xaml code
     * Like this:
@@ -28,20 +27,38 @@
         <cstk:IPAddrBox Text="192.168.1.1" />
         ```
 
-## For Developer - Develop Note
+## For Developer - Develop Notes
 
-use .netstandard style *.proj
+* Use `.netstandard` style `*.csproj`
+* For .Net Framework 4.5 and older
+    * You need Visual Studio 2019 Install SDK
+    * Visual Studio 2022 not support official, but Can Use Older SDK Installed By VS2019
 
 ``` xml
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>    
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
 </Project>
+```
+
+* net45 and later reference changed
+
+> Notes: In Samples Project, Net40 xmlns namespace need change manual
+
+``` xml
+<!-- replace System.Windows.Interactivity.dll -->
+<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+<!-- replace System.ComponentModel.DataAnnotations -->
+<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 ```
 
 
 ## Other WPF Control Lib
 
-[Extended WPF Toolkit](https://github.com/xceedsoftware/wpftoolkit)
-
+* ~~[WPF Toolkit: Xceed Extended WPF Toolkit](https://github.com/xceedsoftware/wpftoolkit)~~ : New Version (v4.0.0) License More Limited
+* [MaterialDesignInXamlToolkit: Material Design in XAML & WPF](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
+* [ControlzEx: Shared Controlz for WPF](https://github.com/ControlzEx/ControlzEx)
 
 ## RoadMap
 

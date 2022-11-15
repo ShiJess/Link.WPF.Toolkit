@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Interactivity;
 using System.Windows.Media;
+#if NET40
+using System.Windows.Interactivity;
+#else
+using Microsoft.Xaml.Behaviors;
+#endif
 
 namespace Link.WPF.Toolkit.Behaviors
 {

@@ -13,9 +13,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+#if NET40
+using System.Windows.Interactivity;
+#endif
+
 
 namespace Link.WPF.Toolkit.Samples
 {
+   
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>

@@ -1,12 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <!--Sdk="Microsoft.NET.Sdk.WindowsDesktop"-->
-  <!--Microsoft.NET.Sdk.WindowsDesktop-->
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks>net45;net40</TargetFrameworks>
-    <!--;netcoreapp3.0;netstandard20-->
+    <TargetFrameworks>net40;net45;net462;netcoreapp3.1;net6.0-windows</TargetFrameworks>
     <Version>0.1.0.10</Version>
     <UseWPF>true</UseWPF>
-    <PackageProjectUrl>https://github.com/ShiJess/Link.WPF.Toolkit</PackageProjectUrl>
+    <PackageProjectUrl>https://wpftoolkit.shisujie.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <OutputType>Library</OutputType>
     <StartupObject />
@@ -24,6 +22,7 @@
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetDependDLLFiles</TargetsForTfmSpecificBuildOutput>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
   </PropertyGroup>
 
   <Target Name="GetDependDLLFiles">
@@ -33,10 +32,10 @@
       <BuildOutputInPackage Include="..\External\NET4\Microsoft.Windows.Shell.dll">
       </BuildOutputInPackage>
     </ItemGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
       <BuildOutputInPackage Include="..\External\NET45\System.Windows.Interactivity.dll">
       </BuildOutputInPackage>
-    </ItemGroup>
+    </ItemGroup>-->
   </Target>
 
   <ItemGroup>
@@ -44,14 +43,12 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\..\ReadMe.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
-    <Compile Remove="Behaviors\**" />
-    <EmbeddedResource Remove="Behaviors\**" />
-    <None Remove="Behaviors\**" />
-    <Page Remove="Behaviors\**" />
-  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -63,11 +60,17 @@
     </Reference>
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\External\NET45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
+  </ItemGroup>-->
+
+
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net40' ">
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+#if NET40
 using System.Windows.Interactivity;
+#else
+using Microsoft.Xaml.Behaviors;
+#endif
 
 namespace Link.WPF.Toolkit.Behaviors
 {

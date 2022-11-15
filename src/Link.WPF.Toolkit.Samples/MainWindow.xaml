@@ -4,12 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples"
-        xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"   
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"       
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+   
         xmlns:SampleDataSource="clr-namespace:Expression.Blend.SampleData.SampleDataSource"   
         x:Class="Link.WPF.Toolkit.Samples.MainWindow" WindowState="Maximized"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
-        Title="MainWindow" Height="800" Width="1000" ><!--Style="{DynamicResource WindowStyle_MainDefault}"-->
+        Title="MainWindow" Height="800" Width="1000" >
+        
+    <!--NET45 and later Use-->
+    <!--xmlns:i="http://schemas.microsoft.com/xaml/behaviors"-->
+    
+    <!--NET40 Use-->
+    <!--xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"-->
+    
+    <!--Style="{DynamicResource WindowStyle_MainDefault}"-->
     <Window.Resources>
 
         <SampleDataSource:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
@@ -199,6 +208,6 @@
 
 
         <cstk:WaitingMask x:Name="mask" Visibility="Collapsed" />
-        
+
     </Grid>
 </Window>

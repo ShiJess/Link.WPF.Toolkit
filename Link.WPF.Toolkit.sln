@@ -1,15 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29123.88
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.WPF.Toolkit", "src\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj", "{D5C27EAE-7DC9-4FE0-A2D5-D836FBCB754F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Link.WPF.Toolkit.Samples", "src\Link.WPF.Toolkit.Samples\Link.WPF.Toolkit.Samples.csproj", "{7014CD30-CDA6-46C8-91DE-885254AF64F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.WPF.Toolkit.Samples", "src\Link.WPF.Toolkit.Samples\Link.WPF.Toolkit.Samples.csproj", "{7014CD30-CDA6-46C8-91DE-885254AF64F0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.WPF.Toolkit.Markdig", "src\Link.WPF.Toolkit.Markdig\Link.WPF.Toolkit.Markdig.csproj", "{B12E9E71-1A00-483C-84CB-BC39F678FE08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.WPF.ThemeGallery", "src\Link.WPF.ThemeGallery\Link.WPF.ThemeGallery.csproj", "{801CFB78-FB15-4646-8358-C74774A2E29E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{1FB0DF42-29A3-4212-B767-8F21EB1919A8}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
