@@ -5,14 +5,18 @@
     <UseWPF>true</UseWPF>
     <Version>0.1.0.2-pre</Version>
     <Authors>Jess</Authors>
-    <Description>theme dark default style;</Description>
+    <Description>
+      theme dark default style;
+    </Description>
     <PackageProjectUrl>https://wpftoolkit.shisujie.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ShiJess/Link.WPF.Toolkit</RepositoryUrl>
     <PackageTags>WPF Styles,Themes</PackageTags>
     <PackageIcon>Link.WPF.Toolkit.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetDependDLLFiles</TargetsForTfmSpecificBuildOutput>
-    <PackageReleaseNotes>fix dependcy dll miss problem;</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      fix dependcy dll miss problem;
+    </PackageReleaseNotes>
     <AssemblyName>Link.WPF.ThemeGallery</AssemblyName>
     <RootNamespace>Link.WPF.ThemeGallery</RootNamespace>
     <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
@@ -36,14 +40,14 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
-  </ItemGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Reference Include="Microsoft.Windows.Shell">
       <HintPath>..\External\NET4\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Link.WPF.Toolkit\Link.WPF.Toolkit.csproj" />
   </ItemGroup>
 
 </Project>

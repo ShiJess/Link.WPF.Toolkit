@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!--<TargetFramework>net472</TargetFramework>-->
     <TargetFrameworks>net45;net462;netcoreapp3.1;net6.0-windows</TargetFrameworks>
 
     <!--net40 single test : because xaml behavior namespace-->
@@ -23,12 +24,10 @@
   <ItemGroup>
     <PackageReference Include="MvvmLight" Version="5.4.1.1" />
     <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
+    
+    <!--Next Gen-->
+    <!--<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />-->
   </ItemGroup>
-
-  <!--<ItemGroup Condition=" '$(TargetFramework)' != 'net40' ">
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-  </ItemGroup>-->
 
   <ItemGroup>
     <ProjectReference Include="..\Link.WPF.ThemeGallery\Link.WPF.ThemeGallery.csproj" />

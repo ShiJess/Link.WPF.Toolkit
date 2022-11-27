@@ -29,6 +29,8 @@ namespace Link.WPF.Toolkit.Samples
         public MainWindow()
         {
             InitializeComponent();
+            dataGrid.Items.Add("111");
+            dataGrid.Items.Add("111");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -23,3 +23,9 @@
     <converter:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
     <converter:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
     ```
+
+* NullEmptyToBoolean Series Converter
+    * Source: Empty / Zero / Null
+    * Target: Visibility / Bool
+        * Default False: Visibility.Collapsed / False
+        * False Use Param Support: Visibility.Hidden / Null

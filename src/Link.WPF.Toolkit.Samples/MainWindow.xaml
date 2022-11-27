@@ -1,27 +1,27 @@
-﻿<Window
+﻿<Window x:Class="Link.WPF.Toolkit.Samples.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples"
         xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"       
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-   
-        xmlns:SampleDataSource="clr-namespace:Expression.Blend.SampleData.SampleDataSource"   
-        x:Class="Link.WPF.Toolkit.Samples.MainWindow" WindowState="Maximized"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
-        Title="MainWindow" Height="800" Width="1000" >
         
-    <!--NET45 and later Use-->
-    <!--xmlns:i="http://schemas.microsoft.com/xaml/behaviors"-->
+   xmlns:view="clr-namespace:Link.WPF.Toolkit.Samples.View"
+        xmlns:SampleDataSource="clr-namespace:Expression.Blend.SampleData.SampleDataSource"   
+        WindowState="Maximized"
+        mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen" 
     
-    <!--NET40 Use-->
-    <!--xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"-->
+        Title="MainWindow" Height="800" Width="1000" >
+
+
     
+
     <!--Style="{DynamicResource WindowStyle_MainDefault}"-->
     <Window.Resources>
 
         <SampleDataSource:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+        <d:SampleData x:Key="sd" ItemCount="10" />
 
         <DataTemplate x:Key="DataTemplate1">
             <Grid>
@@ -173,30 +173,21 @@
                     <ListBox ItemsSource="{Binding Collection}" Width="200" cstk:ScrollViewerHelper.ScrollMode="HorizontalFirst" cstk:ScrollViewerHelper.ScrollParent="True" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}"/>
                 </StackPanel>
             </ScrollViewer>
-            <ScrollViewer >
-                <StackPanel>
-                    <ListBox ItemsSource="{Binding Collection}"  Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate2}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
-                        <i:Interaction.Behaviors>
-                            <cstk:IgnoreMouseWheelBehavior />
-                        </i:Interaction.Behaviors>
-                    </ListBox>
-                    <ListBox ItemsSource="{Binding Collection}" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
-                        <i:Interaction.Behaviors>
-                            <cstk:IgnoreMouseWheelBehavior />
-                        </i:Interaction.Behaviors>
-                    </ListBox>
-                    <ListBox ItemsSource="{Binding Collection}"  Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate2}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
-                        <i:Interaction.Behaviors>
-                            <cstk:ScrollParentWhenAtEdge />
-                        </i:Interaction.Behaviors>
-                    </ListBox>
-                    <ListBox ItemsSource="{Binding Collection}" Height="200" ItemTemplate="{DynamicResource DataTemplate1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SampleDataSource}}">
-                        <i:Interaction.Behaviors>
-                            <cstk:ScrollParentWhenAtEdge />
-                        </i:Interaction.Behaviors>
-                    </ListBox>
-                </StackPanel>
-            </ScrollViewer>
+
+
+            <DataGrid x:Name="dataGrid" cstk:ScrollViewerHelper.ScrollMode="VerticalFirst">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                    <DataGridTextColumn Header="tttt" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <!--<DataGrid cstk:ScrollViewerHelper.ScrollMode="HorizontalFirst"  />-->
 
             <cstk:RichTextBlock ParaIndent="10" InnerText="11111" />
 

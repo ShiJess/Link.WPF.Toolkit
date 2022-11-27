@@ -20,7 +20,7 @@ namespace Link.WPF.Toolkit
         /// <summary>
         /// Set ScrollViewer Scroll Mode
         /// </summary>
-        public static readonly DependencyProperty ScrollModeProperty = DependencyProperty.RegisterAttached("ScrollMode", typeof(ScrollMode), typeof(ScrollViewerHelper), new PropertyMetadata(ScrollMode.VerticalFirst, OnScrollModeChanged));
+        public static readonly DependencyProperty ScrollModeProperty = DependencyProperty.RegisterAttached("ScrollMode", typeof(ScrollMode), typeof(ScrollViewerHelper), new PropertyMetadata(ScrollMode.None, OnScrollModeChanged));
 
         public static void SetScrollMode(DependencyObject o, ScrollMode value)
         {
@@ -248,7 +248,7 @@ namespace Link.WPF.Toolkit
     public enum ScrollMode
     {
         /// <summary>
-        /// Default: Disable Scroll
+        /// Default: Disable Scroll / UnSet
         /// </summary>
         None = 0,
         /// <summary>

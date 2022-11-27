@@ -10,8 +10,13 @@ using System.Windows.Data;
 namespace Link.WPF.Toolkit.Converter
 {
     /// <summary>
-    /// null/空/0 值 转换Visible
+    /// Null/Empty/0 To Visible
     /// </summary>
+    /// <seealso cref="NullEmptyListToBooleanConverter"/>
+    /// <seealso cref="NullEmptyStringToBooleanConverter"/>
+    /// <seealso cref="NullZeroNumberToBooleanConverter"/>
+    /// <seealso cref="NullEmptyToBooleanConverter"/>
+    [Obsolete("Use More Specific Type Converter & Integrated Converter")]
     public class NullEmptyZeroToVisibleConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
