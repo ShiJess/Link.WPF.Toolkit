@@ -4,18 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Link.WPF.Toolkit.Samples"
-        xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"       
-        
-   xmlns:view="clr-namespace:Link.WPF.Toolkit.Samples.View"
+        xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"               
+        xmlns:view="clr-namespace:Link.WPF.Toolkit.Samples.View"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:SampleDataSource="clr-namespace:Expression.Blend.SampleData.SampleDataSource"   
         WindowState="Maximized"
         mc:Ignorable="d"
-    WindowStartupLocation="CenterScreen" 
-    
+        WindowStartupLocation="CenterScreen"     
         Title="MainWindow" Height="800" Width="1000" >
-
-
-    
 
     <!--Style="{DynamicResource WindowStyle_MainDefault}"-->
     <Window.Resources>
@@ -123,6 +119,8 @@
             </Style.Triggers>-->
         </Style>
 
+        <cstk:IsGreaterThanConverter x:Key="IsGreaterThanConverter" />
+
     </Window.Resources>
     <Window.DataContext>
         <Binding Path="Main" Source="{StaticResource Locator}"/>
@@ -194,6 +192,51 @@
             <cstk:TimePicker Text="00:00:00" />
 
             <cstk:DateTimePicker />
+
+            <ScrollViewer Background="DarkGray" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Grid Width="500" Height="500" >
+                    <ScrollViewer Background="Red" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                              cstk:ScrollViewerHelper.ScrollMode="VerticalFirst"
+                              cstk:ScrollViewerHelper.ScrollParent="True"
+                              cstk:ScrollViewerHelper.ScrollParentDelay="10"                              
+                              >
+                        <Grid Width="1000" Height=" 1000"></Grid>
+                    </ScrollViewer>
+                </Grid>
+            </ScrollViewer>
+
+            <ScrollViewer>
+                <Grid Height="500">
+                    <TreeView Height="100" cstk:ScrollViewerHelper.ScrollParent="True" >
+
+                        <!--cstk:ScrollViewerHelper.ScrollMode="VerticalFirst"-->
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                        <TreeViewItem Header="aa" />
+                    </TreeView>
+                </Grid>
+            </ScrollViewer>
+
+            <ScrollBar Style="{DynamicResource ScrollBarStyle_SplitRepeatTrack}" />
+            <ScrollBar Style="{DynamicResource ScrollBarStyle_SplitRepeatTrack}" Orientation="Horizontal" />
+
+            <!--<ScrollViewer  />-->
+            <TextBox IsEnabled="{Binding Source={x:Static sys:Int32.MinValue},Converter={StaticResource IsGreaterThanConverter},ConverterParameter=2}" />
+            <!--<ProgressBar />-->
+
+            <!--<RepeatButton />-->
 
         </UniformGrid>
 

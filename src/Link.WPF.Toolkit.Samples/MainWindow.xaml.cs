@@ -20,7 +20,7 @@ using System.Windows.Interactivity;
 
 namespace Link.WPF.Toolkit.Samples
 {
-   
+
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>

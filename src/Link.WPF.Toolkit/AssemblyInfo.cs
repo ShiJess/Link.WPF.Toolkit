@@ -14,6 +14,8 @@ using System.Windows.Markup;
 //uri style xmlns namespace
 [assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit")]
 [assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit.Behaviors")]
+[assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit.Converter")]
+[assembly: XmlnsDefinition("http://schemas.canself.com/wpf/xaml/toolkit", "Link.WPF.Toolkit.Validation")]
 
 //#if NET40
 //[assembly: XmlnsDefinition("http://schemas.microsoft.com/xaml/behaviors", "System.Windows.Interactivity", AssemblyName = "System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")]

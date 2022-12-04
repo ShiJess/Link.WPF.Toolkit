@@ -18,14 +18,14 @@
 
 * Add Namespace to xaml code
     * Like this:
-        ``` xml
-        xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
-        ```
+    ``` xml
+    xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
+    ```
 * Use Control
     * Sample Code:
-        ``` xml
-        <cstk:IPAddrBox Text="192.168.1.1" />
-        ```
+    ``` xml
+    <cstk:IPAddrBox Text="192.168.1.1" />
+    ```
 
 ## For Developer - Develop Notes
 
@@ -85,7 +85,7 @@
 
 * Add Style Lib - provide some common style
     * common control style, e.g:TextBox,Button,ComboBox,etc.
-    * some company classical style imitation, e.g:google style,ms style,ali style,netease style,etc.
+    * some company classical style imitation, e.g:google style/material,ms style/fluent,ali style/ant,~~netease style~~,etc.
     * attention:ContextMenu style,avoid separator exception
 
 
@@ -98,7 +98,7 @@
 
 * Wait Mask
     * delay hide —— e.g:hide wait message delay one second
-* 常用validaterule-如数字。。。
+* ~~常用validaterule-如数字。。。~~
 * 添加datagrid类似控件，
     * 修改行功能：弹窗窗体or控件修改行
     * datagrid_冻结行列
@@ -111,4 +111,4 @@
 * 定期刷新支持的listcollectionview——支持设置刷新模式
     * 立即刷新&定时刷新&堆栈数量刷新
 
-* Validation 数据验证，添加各类验证rule及界面验证 建议调用方法
+* ~~Validation 数据验证，添加各类验证rule及界面验证 建议调用方法~~

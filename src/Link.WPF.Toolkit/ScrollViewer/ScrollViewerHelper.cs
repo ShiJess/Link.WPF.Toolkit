@@ -71,6 +71,41 @@ namespace Link.WPF.Toolkit
         }
         #endregion
 
+        #region Scroll Parent Delay
+        /// <summary>
+        /// Scroll Parent Delay
+        ///     * Depend ScrollParent = true
+        /// </summary>
+        public static readonly DependencyProperty ScrollParentDelayProperty = DependencyProperty.RegisterAttached("ScrollParentDelay", typeof(int), typeof(ScrollViewerHelper), new PropertyMetadata(1));
+
+        public static void SetScrollParentDelay(DependencyObject o, int value)
+        {
+            o.SetValue(ScrollParentDelayProperty, value);
+        }
+
+        public static int GetScrollParentDelay(DependencyObject o)
+        {
+            return (int)o.GetValue(ScrollParentDelayProperty);
+        }
+
+
+        /// <summary>
+        /// Scroll Parent Delay Temp Count
+        /// </summary>
+        private static readonly DependencyProperty DelayCountProperty = DependencyProperty.RegisterAttached("DelayCount", typeof(int), typeof(ScrollViewerHelper), new PropertyMetadata(1));
+
+        private static void SetDelayCount(DependencyObject o, int value)
+        {
+            o.SetValue(DelayCountProperty, value);
+        }
+
+        private static int GetDelayCount(DependencyObject o)
+        {
+            return (int)o.GetValue(DelayCountProperty);
+        }
+
+        #endregion
+
         private static void ElementScroll_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             try
@@ -79,6 +114,8 @@ namespace Link.WPF.Toolkit
                 int d = e.Delta;
                 var scrollmode = GetScrollMode(items);
                 var scrollparent = GetScrollParent(items);
+                var delay = GetScrollParentDelay(items);
+                var count = GetDelayCount(items);
                 ScrollViewer scroll = FindVisualChild<ScrollViewer>(items);
                 if (scroll != null)
                 {
@@ -86,6 +123,7 @@ namespace Link.WPF.Toolkit
 
                     switch (scrollmode)
                     {
+                        case ScrollMode.None:
                         case ScrollMode.VerticalOnly:
                             {
                                 if (d < 0)
@@ -95,6 +133,11 @@ namespace Link.WPF.Toolkit
                                     if (scrollparent && (scroll.VerticalOffset >= scroll.ScrollableHeight))
                                     {
                                         e.Handled = false;
+                                        SetDelayCount(items, ++count);
+                                    }
+                                    else
+                                    {if(count>0)
+                                        SetDelayCount(items, --count);
                                     }
                                 }
                                 else if (d > 0)
@@ -103,6 +146,12 @@ namespace Link.WPF.Toolkit
                                     if (scrollparent && (scroll.VerticalOffset <= 0))
                                     {
                                         e.Handled = false;
+                                        SetDelayCount(items, ++count);
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                             }
@@ -115,6 +164,12 @@ namespace Link.WPF.Toolkit
                                     if (scrollparent && (scroll.HorizontalOffset >= scroll.ScrollableWidth))
                                     {
                                         e.Handled = false;
+                                        SetDelayCount(items, ++count);
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                                 else if (d > 0)
@@ -123,6 +178,12 @@ namespace Link.WPF.Toolkit
                                     if (scrollparent && (scroll.HorizontalOffset <= 0))
                                     {
                                         e.Handled = false;
+                                        SetDelayCount(items, ++count);
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                             }
@@ -138,19 +199,31 @@ namespace Link.WPF.Toolkit
                                         if (scrollparent && (scroll.HorizontalOffset >= scroll.ScrollableWidth))
                                         {
                                             e.Handled = false;
+                                            SetDelayCount(items, ++count);
                                         }
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                                 else if (d > 0)
                                 {
                                     scroll.LineUp();
-                                    if ((scroll.VerticalOffset <= 0))
+                                    if (scroll.VerticalOffset <= 0)
                                     {
                                         scroll.LineLeft();
                                         if (scrollparent && (scroll.HorizontalOffset <= 0))
                                         {
                                             e.Handled = false;
+                                            SetDelayCount(items, ++count);
                                         }
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                             }
@@ -166,7 +239,13 @@ namespace Link.WPF.Toolkit
                                         if (scrollparent && (scroll.VerticalOffset >= scroll.ScrollableHeight))
                                         {
                                             e.Handled = false;
+                                            SetDelayCount(items, ++count);
                                         }
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                                 else if (d > 0)
@@ -178,12 +257,17 @@ namespace Link.WPF.Toolkit
                                         if (scrollparent && (scroll.VerticalOffset <= 0))
                                         {
                                             e.Handled = false;
+                                            SetDelayCount(items, ++count);
                                         }
+                                    }
+                                    else
+                                    {
+                                        if (count > 0)
+                                            SetDelayCount(items, --count);
                                     }
                                 }
                             }
                             break;
-                        case ScrollMode.None:
                         default:
                             e.Handled = false;
                             break;
@@ -196,20 +280,25 @@ namespace Link.WPF.Toolkit
                 {
                     e.Handled = true;
 
-                    var e2 = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-                    //e2.Source = sender;
-                    if (e.Source == sender)
+                    if (count >= delay)
                     {
-                        // e2.RoutedEvent =UIElement.MouseWheelEvent;
-                        e2.RoutedEvent = Mouse.MouseWheelEvent;
+                        var e2 = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+                        //e2.Source = sender;
+                        if (e.Source == sender)
+                        {
+                            // e2.RoutedEvent =UIElement.MouseWheelEvent;
+                            e2.RoutedEvent = Mouse.MouseWheelEvent;
+                            var parentScrollViewer = FindVisualParent<ScrollViewer>(element);
+                            if (parentScrollViewer != null)
+                                parentScrollViewer.RaiseEvent(e2);
+                        }
+                        else
+                        {
+                            //e2.RoutedEvent = UIElement.PreviewMouseWheelEvent;
+                            e2.RoutedEvent = Mouse.PreviewMouseWheelEvent;
+                            element.RaiseEvent(e2);
+                        }
                     }
-                    else
-                    {
-                        //e2.RoutedEvent = UIElement.PreviewMouseWheelEvent;
-                        e2.RoutedEvent = Mouse.PreviewMouseWheelEvent;
-                    }
-
-                    element.RaiseEvent(e2);
                 }
             }
             catch { }
@@ -238,6 +327,24 @@ namespace Link.WPF.Toolkit
                 }
             }
             return null;
+        }
+
+        public static T FindVisualParent<T>(DependencyObject reference) where T : class
+        {
+            var parent = VisualTreeHelper.GetParent(reference);
+            if (parent == null)
+                return null;
+            else
+            {
+                if (parent is T)
+                {
+                    return parent as T;
+                }
+                else
+                {
+                    return FindVisualParent<T>(parent);
+                }
+            }
         }
 
     }

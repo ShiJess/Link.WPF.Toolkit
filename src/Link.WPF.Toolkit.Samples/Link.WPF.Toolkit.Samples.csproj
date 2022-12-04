@@ -27,6 +27,8 @@
     
     <!--Next Gen-->
     <!--<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />-->
+
+    <!--<PackageReference Include="Microsoft.VisualStudio.Text.UI.Wpf" Version="17.4.255" />-->
   </ItemGroup>
 
   <ItemGroup>

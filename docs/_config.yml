@@ -1,5 +1,6 @@
 theme: jekyll-theme-cayman
 
+# github jekyll theme default not support nav,need customize
 nav:
 - name: Home
   link: /

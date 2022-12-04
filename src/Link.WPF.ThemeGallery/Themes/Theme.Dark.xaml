@@ -7,7 +7,9 @@
         <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.TextBox.xaml" />
         <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.Button.xaml" />
         <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.CheckBox.xaml" />
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.ProgressBar.xaml" />
+        <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.ScrollBar.xaml" />
         <ResourceDictionary Source="/Link.WPF.ThemeGallery;component/Styles/Dark/Dark.Window.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
 </ResourceDictionary>

@@ -2,9 +2,9 @@
 
 * Add Namespace to xaml code first:
 
-    ``` xml
-    xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
-    ```
+``` xml
+xmlns:cstk="http://schemas.canself.com/wpf/xaml/toolkit"
+```
 
 * Use Control
 
@@ -18,14 +18,17 @@
 
 * Common ValueConverter
 
-    ``` xml
-    <converter:EnumToDisplayNameConverter x:Key="EnumToNameConverter"/>
-    <converter:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
-    <converter:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
-    ```
+``` xml
+<converter:EnumToDisplayNameConverter x:Key="EnumToNameConverter"/>
+<converter:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
+<converter:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+```
 
 * NullEmptyToBoolean Series Converter
     * Source: Empty / Zero / Null
     * Target: Visibility / Bool
         * Default False: Visibility.Collapsed / False
         * False Use Param Support: Visibility.Hidden / Null
+
+* Validation Rule
+    * For reference only: Because ErrorContent Maybe Not Same
